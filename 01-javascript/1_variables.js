@@ -77,7 +77,7 @@ if (undefined){
 //Objetos JS (JSON) - ARREGLOS
 const david = {
   nombre:"David",//llave: valor
-  false: 'Aguirre',
+  apellido: 'Aguirre',
   edad: 32,
   hijos: null,
   zapatos: undefined,
@@ -87,4 +87,75 @@ const david = {
         talla: '',
     },
     mascotas: ['Cachetes','Pequitas','Panda'],
+    gastos: undefined,
 };
+//Notar que existen estas dos formas de acceder a las propiedades del objeto
+david.nombre;
+david.apellido;
+david['nombre'];
+console.log(david);
+david.nombre = "Alexander";
+david.sueldo;//undefined
+console.log(david.sueldo);
+david.sueldo=1.2;
+console.log("sueldo = " + sueldo);
+david.gastos=12.5;
+console.log(david.gastos);
+david.nombre=undefined;
+console.log(david);
+console.log(Object.keys(david));
+console.log(Object.values(david));
+
+//BOrrar llaves dentro de un objeto
+delete david.nombre;
+console.log(david);
+
+
+//Variables por valor o por referencia
+//Variables por valor en JavaScript son las primitivas
+let edadDavid = 34;
+let edadAlexander = edadDavid;//Guardamos por valor y no por referencia
+//
+console.log(edadDavid);
+console.log(edadAlexander);
+
+edadDavid=edadDavid+1;
+console.log(edadDavid);
+console.log(edadAlexander);
+
+
+//variables por referencia
+// let rafael = {
+//     nombre:"rafael",
+// }
+// let lenin = rafael;
+// console.log(rafael);
+// console.log(lenin);
+// lenin.nombre="Lenin";
+// console.log(rafael);
+// console.log(lenin);
+//
+// delete rafael.nombre;
+// console.log(rafael);
+// console.log(lenin);
+//Manerac correcta con variables por referencia para clonar al objeto
+let rafael = {
+    nombre:"rafael"
+};
+let lenin = Object.assign( {},rafael);
+console.log(rafael);
+console.log(lenin);
+lenin.nombre="Lenin";
+delete rafael.nombre;
+console.log(rafael);
+console.log(lenin);
+
+//cLONAR UN Arreglo
+let arregloDeNumerso = [1,2,3,4,5];
+let arregloClonado = Object.assign([],arregloDeNumerso);
+console.log(arregloDeNumerso);
+console.log(arregloClonado);
+arregloDeNumerso[0]=150;
+arregloClonado[0]=100;
+console.log(arregloClonado);
+console.log(arregloDeNumerso);
