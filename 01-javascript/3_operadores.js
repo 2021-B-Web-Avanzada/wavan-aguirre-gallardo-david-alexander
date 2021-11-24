@@ -129,3 +129,18 @@ const respuestaEvery = arreglo.every(
     }
 );
 console.log('respuesta every',respuestaEvery);
+
+//[1,2,3,4,5,6,5,4,3,1]
+// REDUCE   IZQ->DER
+//REDUCE RIGHT  DERE -> IZQ
+// 100 <3 Puntos de vida
+//100 -1 -1 -2 -5- 6- -4 -3 -1
+// 0 1 +2 +3 +4 +5 +6 +5 +4 +3 +1 =
+
+const reduceRespuesta = arreglo.reduce(
+    function (valorAcumulado, valorActual, indice, arreglo){
+        return valorAcumulado+valorActual.nota;
+    },
+    100//Acumulador
+);
+console.log('respuestaReduce',reduceRespuesta);
