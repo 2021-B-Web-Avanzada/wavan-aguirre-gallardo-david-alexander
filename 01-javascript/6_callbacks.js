@@ -19,8 +19,34 @@ fs.readFile(
     'utf-8',
     (error, contenido)=>{
         if(error){
-            console.log({mensake:"error al leer el contenido.", error:error});
+            console.log({mensaje:"error al leer el contenido.", error:error});
         }else{
+            console.log("contenido =" , contenido);
+
+        }
+    }
+);
+
+console.log("TERCERO");
+
+fs.readFile(
+    './6_ejemplo.txt',
+    'utf-8',
+    (error, contenido)=>{
+        if(error){
+            console.log({mensaje:"error al leer el contenido.", error:error});
+        }else{
+            fs.readFile(
+                './1_variables.js',//2
+                'utf-8',
+                (errorVariable, contenidoVariable) => {
+                    if(errorVariable){
+                        console.log({mensaje:"Error al leer variable", error:errorVariable});
+                    }else{
+                        console.log(contenido,contenidoVariable);
+                    }
+                }
+            )
             console.log("contenido =" , contenido);
 
         }
