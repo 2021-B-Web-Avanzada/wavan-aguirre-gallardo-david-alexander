@@ -1,0 +1,2 @@
+7372|TIA|74|Symbol(TIA)|Diego Sandoval|45621||undefined|null
+418|SANTA MARIA|58|Symbol(SANTA MARIA)|Marco Cruz|3215||undefined|null
