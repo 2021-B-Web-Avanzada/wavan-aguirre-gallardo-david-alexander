@@ -58,6 +58,11 @@ const routes: Routes = [
     pathMatch:'full',
   },
   {
+    path: 'lazy-inventario',
+    loadChildren:()=>import("./modulos/modulo-inventario/modulo-inventario.module")
+      .then(m=> m.ModuloInventarioModule)
+  },
+  {
     path: '**',
     component:RutaNotFoundComponent
   }
