@@ -14,6 +14,7 @@ import {AuthService} from "./services/auth/authservice";
 import {EstaLogeadoGuard} from "./services/auth/esta-logeado.guard";
 import {EsAdministradorGuard} from "./services/auth/esadministrador.guard";
 
+
 @NgModule({
   declarations: [
     AppComponent,
