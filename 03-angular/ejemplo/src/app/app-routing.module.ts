@@ -8,6 +8,7 @@ import {RutaAppComponent} from "./rutas/ruta-app/ruta-app.component";
 import {RutaPostComponent} from "./rutas/ruta-post/ruta-post.component";
 import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component";
 import {EstaLogeadoGuard} from "./services/auth/esta-logeado.guard";
+import {EsAdministradorGuard} from "./services/auth/esadministrador.guard";
 
 
 //Login
@@ -42,6 +43,7 @@ const routes: Routes = [
     children:[
       {
         path:'post',
+        canActivate:[EsAdministradorGuard],
         component:RutaPostComponent
       },
       {
