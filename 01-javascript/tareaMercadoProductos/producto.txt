@@ -1,1 +1,2 @@
 Yogurt Avena|3.25|Lacteos|6|75|Toni|35|true|Sat Feb 11 2006 00:00:00 GMT-0500 (hora de Ecuador)|Sat Jun 11 2022 00:00:00 GMT-0500 (hora de Ecuador)|Aki
+Gelatina|4.3|Saborizante|32|4|Toni|85|true|Thu Feb 11 2021 00:00:00 GMT-0500 (hora de Ecuador)|Sun Apr 03 2022 00:00:00 GMT-0500 (hora de Ecuador)|Aki
