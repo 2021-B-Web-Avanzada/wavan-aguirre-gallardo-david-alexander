@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ruta-login.component.scss']
 })
 export class RutaLoginComponent implements OnInit {
-
+  mostrarSegundoBanner = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  cambiarOcultarBanner(){
+    this.mostrarSegundoBanner = !this.mostrarSegundoBanner;
+  }
 }
