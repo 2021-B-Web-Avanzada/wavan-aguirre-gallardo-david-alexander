@@ -6,7 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner-imagenes.component.scss']
 })
 export class BannerImagenesComponent implements OnInit {
-
+  nombre = 'David';
+  apellido = 'Aguirre';
+  mascotas = {
+    cachetes:{
+      edad:7,
+    }
+  };
   constructor() { }
 
   ngOnInit(): void {
