@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaLoginComponent implements OnInit {
   mostrarSegundoBanner = true;
+  arregloUsuarios = [
+    {
+      id:1,
+      nombre: 'David'
+    },
+    {
+      id:2,
+      nombre: 'Alexander'
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {
