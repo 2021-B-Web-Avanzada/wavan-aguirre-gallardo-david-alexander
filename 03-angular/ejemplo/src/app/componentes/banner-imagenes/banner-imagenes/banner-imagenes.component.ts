@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-banner-imagenes',
@@ -16,8 +16,12 @@ export class BannerImagenesComponent implements OnInit {
   }
   fecha = new Date();
   sueldo = 1000;
+  @Input()
   url = 'http://www.google.com';
+  @Input()
   urlImg = 'https://www.allente.se/contentassets/1a302a78398545b597d71a5de6442033/se_fotbollsarena_2880x1000.jpg?format=jpeg&fastscale=True&down.colorspace=linear&width=1300&height=451';
+  @Input()
+  color = 'yellow';
   constructor() { }
 
   ngOnInit(): void {

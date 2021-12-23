@@ -1,5 +1,14 @@
-<app-banner-imagenes></app-banner-imagenes>
+<!--<app-banner-imagenes></app-banner-imagenes>-->
 <p>ruta-login works!</p>
+<div *ngFor="let usuario of arregloUsuarios;let i= index">
+  <app-banner-imagenes [color]="usuario.color"
+  [url]="usuario.link"
+  [urlImg]="usuario.linkImagen" >
+
+  </app-banner-imagenes>
+</div>
+
+
 
 <!--Directiva NGFOR OF -> let variable of aarreglo: let i = index-->
 <h1>NG FOR</h1>
