@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NoticiaprincipalComponent } from './componentes/noticiaprincipal/noticiaprincipal.component';
+import { NoticiaEnfoqueComponent } from './componentes/noticia-enfoque/noticia-enfoque.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoticiaprincipalComponent,
+    NoticiaEnfoqueComponent
   ],
   imports: [
     BrowserModule,
