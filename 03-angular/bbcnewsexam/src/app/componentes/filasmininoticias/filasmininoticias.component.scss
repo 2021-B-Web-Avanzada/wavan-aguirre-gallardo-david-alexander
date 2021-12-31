@@ -1,0 +1,25 @@
+#contenedorMiniNoticias{
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: inline-block;
+}
+.Mininoticias{
+  float: left;
+  box-sizing: content-box;
+  padding-top: 15px;
+  width: 25%;
+  height: 260px;
+}
+.Mininoticias .imagenMini{
+  padding-right: 15px;
+}
+.tituloMiniNoticia{
+  padding-top: 5px;
+  padding-right: 15px;
+}
+.tituloMiniNoticia:hover{
+  text-decoration: underline;
+}
+.fechaMiniNoticia{
+  font-size: 12px;
+}

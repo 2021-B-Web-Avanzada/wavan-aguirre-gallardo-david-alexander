@@ -1,0 +1,48 @@
+.separador{
+  margin-top: 20px;
+}
+
+.tituloSeparador{
+  float: left;
+  box-sizing: content-box;
+  font-weight: normal;
+  width: 18%;
+}
+
+.separador .abrirContenido{
+  text-align: right;
+  width: 8%;
+  float: left;
+}
+hr{
+  width: 100%;
+  float: left;
+  padding-top: 1px;
+}
+.linea{
+  width: 74%;
+  box-sizing: content-box;
+  float: left;
+}
+.contenedorNoticiaTipo{
+  display: inline-block;
+  box-sizing: content-box;
+  height: 300px;
+}
+.imgNoticiaTipo{
+  width: 50%;
+  float: left;
+}
+.imgNoticiaTipo img{
+  width: 100%;
+}
+.tituloNoticiaTipo{
+  width: 50%;
+  float: left;
+}
+.tituloNoticiaTipo:hover{
+  text-decoration: underline;
+}
+.tituloNoticiaTipo p{
+  padding-left: 15px;
+}

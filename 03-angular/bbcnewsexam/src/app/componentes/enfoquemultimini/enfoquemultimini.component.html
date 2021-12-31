@@ -1,0 +1,33 @@
+<!--<div class="separador">-->
+<!--  <p class="h4 tituloSeparador">Destacamos</p>-->
+<!--  <hr>-->
+<!--</div>-->
+
+<!--<div class="contenedorNoticiaEnfoque">-->
+<!--  <div class="contTituloNotEnfoque">-->
+<!--    <p class="h3 tituloEnfoque">{{noticiaPrincipal.titulo}}</p>-->
+<!--    <p class="fechaNoticiasEnfoque">{{noticiaPrincipal.fecha}}</p>-->
+<!--  </div>-->
+<!--  <div class="imagenNoticiaEnfoque">-->
+<!--    <img [src]="noticiaPrincipal.urlImg">-->
+<!--  </div>-->
+<!--  <div class="miniNoticiaDerecha">-->
+<!--    <div class="imagenMiniNoticiaDerecha">-->
+<!--      <img [src]="noticiaMini.urlImg">-->
+<!--    </div>-->
+<!--    <p class="h6 text-left tituloEnfoque">{{noticiaMini.titulo}}</p>-->
+<!--    <p class="fechaNoticiasEnfoque">{{noticiaMini.fecha}}</p>-->
+<!--  </div>-->
+<!--</div>-->
+<app-noticia-enfoque
+  [tituloSeparador]="tituloSeccion"
+  [noticiaPrincipal]="noticiaPrincipal"
+  [noticiaMini]="noticiaSecundaria"
+>
+</app-noticia-enfoque>
+<app-filasmininoticias
+  [noticias]="noticias"
+>
+
+</app-filasmininoticias>
+

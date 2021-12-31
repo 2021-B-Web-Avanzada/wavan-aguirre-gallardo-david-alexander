@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoticiaprincipalComponent } from './componentes/noticiaprincipal/noticiaprincipal.component';
 import { NoticiaEnfoqueComponent } from './componentes/noticia-enfoque/noticia-enfoque.component';
+import { EnfoquemultiminiComponent } from './componentes/enfoquemultimini/enfoquemultimini.component';
+import { FilasmininoticiasComponent } from './componentes/filasmininoticias/filasmininoticias.component';
+import { NoticiatipoComponent } from './componentes/noticiatipo/noticiatipo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoticiaprincipalComponent,
-    NoticiaEnfoqueComponent
+    NoticiaEnfoqueComponent,
+    EnfoquemultiminiComponent,
+    FilasmininoticiasComponent,
+    NoticiatipoComponent
   ],
   imports: [
     BrowserModule,
