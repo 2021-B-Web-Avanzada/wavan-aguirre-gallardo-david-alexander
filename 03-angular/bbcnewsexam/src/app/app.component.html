@@ -101,7 +101,31 @@
     <app-noticiaprincipal></app-noticiaprincipal>
     <app-noticia-enfoque></app-noticia-enfoque>
     <app-enfoquemultimini></app-enfoquemultimini>
+      <app-enfoquemultimini
+        [tituloSeccion]="contentItems[0]"
+        [noticias]="videoaudio"
+        [noticiaPrincipal]="videoaudioprincipal"
+        [noticiaSecundaria]="videoaudiosecundaria"
+      >
+    </app-enfoquemultimini>
+    <app-enfoquemultimini
+      [tituloSeccion]="contentItems[1]"
+      [noticias]="notepierdas"
+      [noticiaPrincipal]="notepierdasprincipal"
+      [noticiaSecundaria]="notepierdassecundaria"
+    >
+    </app-enfoquemultimini>
     <app-noticiatipo></app-noticiatipo>
+    <div *ngFor="let contenido of tiposNotic;let i = index">
+        <app-noticiatipo
+          [tituloSeparador]="contenido"
+          [noticia]="noticiasTipo[i]"
+        >
+        </app-noticiatipo>
+    </div>
+
+
+
   </div>
 
 

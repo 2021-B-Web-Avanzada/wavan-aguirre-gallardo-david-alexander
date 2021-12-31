@@ -8,6 +8,7 @@ import { NoticiaEnfoqueComponent } from './componentes/noticia-enfoque/noticia-e
 import { EnfoquemultiminiComponent } from './componentes/enfoquemultimini/enfoquemultimini.component';
 import { FilasmininoticiasComponent } from './componentes/filasmininoticias/filasmininoticias.component';
 import { NoticiatipoComponent } from './componentes/noticiatipo/noticiatipo.component';
+import { SeparadorTiposComponent } from './componentes/separador-tipos/separador-tipos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NoticiatipoComponent } from './componentes/noticiatipo/noticiatipo.comp
     NoticiaEnfoqueComponent,
     EnfoquemultiminiComponent,
     FilasmininoticiasComponent,
-    NoticiatipoComponent
+    NoticiatipoComponent,
+    SeparadorTiposComponent
   ],
   imports: [
     BrowserModule,
