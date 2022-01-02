@@ -135,7 +135,40 @@ export class AppComponent {
       titulo:'Los secretos sobre la vida y muerte del fararón Amenhotep I que revela la primera tomografía de su momia',
       fecha:'31 de Diciembre de 2021',
       descripcion:'El faraon que ha sido desenterrado por arequelogos parece que fue uno de los mas ricos en sus tiempos.',
-      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/12E0/production/_122523840_mediaitem122523839.jpg.webp'
+      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/107AE/production/_122520576_2-1.jpg.webp'
     }
   ];
+  enFotosTitle = 'En fotos'
+  enFotosPrincipal = {
+    titulo:'15 de las fotos más impactantes que dejó 2021',
+    fecha:'1 de enero de 2022',
+    urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/019B/production/_122511400_tuvalu.jpg.webp'
+  };
+  enFotosSecundaria = {
+    titulo:'Gabriel Boric: las fotos de la celebración de su victoria en las calles de Chile',
+    fecha:'1 de enero de 2022',
+    urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/F3CA/production/_122301426_hi072725619.jpg.webp'
+  }
+  enFotosNoticias = [
+    {
+      titulo:'2021 en América Latina: 15 imágenes de eventos que marcaron el año',
+      fecha:'1 de enero de 2022',
+      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/5949/production/_122475822_71cd15fd-d506-4f3d-9011-e5a0644473f6.jpg.webp'
+    },
+    {
+      titulo:'Unión Soviética: 10 imágenes emblemáticas de la URSS a 30 años de su caída',
+      fecha:'31 de diciembre de 2021',
+      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/C629/production/_122492705_lenin3.jpg.webp'
+    },
+    {
+      titulo:'Covid: las imágenes que muestran cómo Nigeria destruyó más de un millón de vacunas',
+      fecha:'31 de diciembre de 2021',
+      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/67B3/production/_122474562_reu1.jpg.webp'
+    },
+    {
+      titulo:'Las escenas de dolor tras la masacre que dejó 13 muertos en Guatemala',
+      fecha:'31 de diciembre de 2021',
+      urlImg:'https://ichef.bbci.co.uk/news/800/cpsprodpb/E218/production/_122308875_gettyimages-1237353621.jpg.webp'
+    }
+  ]
 }

@@ -1,0 +1,83 @@
+.separador{
+  margin-top: 20px;
+}
+
+.tituloSeparador{
+  float: left;
+  box-sizing: content-box;
+  font-weight: normal;
+  width: 18%;
+}
+
+hr{
+  width: 100%;
+  float: left;
+  padding-top: 1px;
+}
+.linea{
+  width: 81%;
+  box-sizing: content-box;
+  float: left;
+}
+.contenedorRedesSociales{
+  display: inline-block;
+}
+.contenedorMasLeidas{
+  display: inline-block;
+  box-sizing: content-box;
+  width: 100%;
+  padding-top: 40px;
+}
+.NoticiaMasLeida{
+  width: 50%;
+  float: left;
+  box-sizing: content-box;
+}
+.NoticiaMasLeidaDerecha{
+  width: 50%;
+  float: left;
+  box-sizing: content-box;
+}
+.noticiaIzquierda{
+  width: 90%;
+  float: left;
+  box-sizing: content-box;
+  display: inline-block;
+}
+.noticiaDerecha{
+  width: 90%;
+  float: left;
+  box-sizing: content-box;
+}
+.indice{
+  float: left;
+  display: block;
+  width: 16%;
+  box-sizing: content-box;
+  color: #b80000;
+  font-family: Cambria;
+  font-size: 50px;
+  height: 100px;
+}
+.tituloNoticiaMasLeida{
+  float: left;
+  width: 100%;
+  box-sizing: content-box;
+  padding-right: 10px;
+  height: 100%;
+}
+.tituloNoticiaMasLeida p{
+  padding-top: 15px;
+}
+.tituloNoticiaMasLeida p:hover{
+  text-decoration: underline;
+}
+//.indice p{
+//  color: #b80000;
+//  font-family: Cambria;
+//  font-size: 65px;
+//  box-sizing: content-box;
+//  margin: 0;
+//  padding: 0;
+//  float: left;
+//}

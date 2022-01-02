@@ -1,0 +1,41 @@
+<div class="separador">
+  <p class="h4 tituloSeparador">{{tituloSeparador1}}</p>
+  <div class="linea">
+    <hr>
+  </div>
+</div>
+<div class="contenedorRedesSociales">
+  <img src="assets/redessociales.png">
+</div>
+<div class="separador">
+  <p class="h4 tituloSeparador">{{tituloSeparador2}}</p>
+  <div class="linea">
+    <hr>
+  </div>
+</div>
+<div class="contenedorMasLeidas">
+  <div class="NoticiaMasLeida" >
+    <div class="noticiaIzquierda" *ngFor="let noticia of masleidasNoticias; let indice = index">
+
+      <div class="tituloNoticiaMasLeida">
+        <div class="indice">
+          {{noticia.numero}}
+        </div>
+        <p class="h5">{{noticia.titulo}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="NoticiaMasLeidaDerecha" >
+    <div class="noticiaDerecha" *ngFor="let noticia of masLeidasNoticiasDer; let indice = index">
+
+      <div class="tituloNoticiaMasLeida">
+        <div class="indice">
+          {{noticia.numero}}
+        </div>
+        <p class="h5">{{noticia.titulo}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+

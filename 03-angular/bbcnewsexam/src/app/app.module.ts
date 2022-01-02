@@ -9,6 +9,7 @@ import { EnfoquemultiminiComponent } from './componentes/enfoquemultimini/enfoqu
 import { FilasmininoticiasComponent } from './componentes/filasmininoticias/filasmininoticias.component';
 import { NoticiatipoComponent } from './componentes/noticiatipo/noticiatipo.component';
 import { SeparadorTiposComponent } from './componentes/separador-tipos/separador-tipos.component';
+import { PrefooterComponent } from './componentes/prefooter/prefooter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SeparadorTiposComponent } from './componentes/separador-tipos/separador
     EnfoquemultiminiComponent,
     FilasmininoticiasComponent,
     NoticiatipoComponent,
-    SeparadorTiposComponent
+    SeparadorTiposComponent,
+    PrefooterComponent
   ],
   imports: [
     BrowserModule,
