@@ -72,6 +72,16 @@ hr{
 .tituloNoticiaMasLeida p:hover{
   text-decoration: underline;
 }
+.sociosComerciales{
+  box-sizing: content-box;
+  float: left;
+  display: inline-block;
+  width: 100%;
+  padding: 25px 0 25px 0;
+}
+.sociosComerciales:hover{
+  text-decoration: underline;
+}
 //.indice p{
 //  color: #b80000;
 //  font-family: Cambria;

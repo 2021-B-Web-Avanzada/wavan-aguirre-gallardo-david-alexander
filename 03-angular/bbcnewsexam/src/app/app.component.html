@@ -72,8 +72,15 @@
     background-color: #b80000;
     box-sizing: content-box;
     padding-left: 15%;
-  }
 
+  }
+  .footerLogo img{
+    padding:12px 0 12px 0;
+  }
+  .footerLogo img:hover{
+    border-bottom: 4px solid white;
+    height: 90%;
+  }
 .footerInformacion{
   color: white;
   background: #333333;
@@ -83,6 +90,12 @@
   padding-top: 30px;
   padding-bottom: 2px;
   font-size: 12px;
+}
+.confiarBBC{
+  font-weight: bold;
+}
+.confiarBBC:hover{
+  text-decoration: underline;
 }
 .terminos{
   box-sizing: content-box;
@@ -95,6 +108,9 @@
   font-weight: bold;
   width: 20%;
 }
+  .terminos p:hover{
+    text-decoration: underline;
+  }
 .info{
   display: inline-block;
   width: 100%;
@@ -105,6 +121,9 @@
   font-weight: bold;
   width: 20%;
 }
+  .info p:hover{
+    text-decoration: underline;
+  }
 .copyright{
   font-size: 12px;
 }
@@ -171,7 +190,7 @@
       <img src="/assets/bbcnewslogo.png">
     </div>
     <div class="footerInformacion">
-      <p>Por qué puedes confiar en la BBC</p>
+      <p class="confiarBBC">Por qué puedes confiar en la BBC</p>
       <hr>
       <div class="terminos">
         <p>Términos de Uso</p>

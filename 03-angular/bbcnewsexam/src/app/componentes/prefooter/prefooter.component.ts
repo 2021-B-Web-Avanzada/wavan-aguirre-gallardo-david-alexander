@@ -10,6 +10,8 @@ export class PrefooterComponent implements OnInit {
   tituloSeparador1='En redes sociales';
   @Input()
   tituloSeparador2='Más leídas';
+  @Input()
+  tituloSeparador3='Nuestros Socios';
 
   masleidasNoticias = [
     {
