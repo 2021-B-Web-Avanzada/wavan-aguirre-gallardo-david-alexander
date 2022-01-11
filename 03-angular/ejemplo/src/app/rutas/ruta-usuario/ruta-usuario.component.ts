@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserJphService} from "../../services/http/user-jph.service";
+import {UserJphInterface} from "../../services/http/interfaces/user-jph.interface";
 
 @Component({
   selector: 'app-ruta-usuario',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaUsuarioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly userJphService:UserJphService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.userJphService
+      .buscarTodos()
+      .subscribe({
+          next: (datos) => {
+            console.log({datos});
+          },
+          error: (error) => {
+            console.error({error});
+          },
+        }
+      )
+  }
 }
