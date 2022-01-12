@@ -1,0 +1,10 @@
+<div id="contenedorMiniNoticias" >
+  <div class="Mininoticias" *ngFor="let noticia of noticias; let i = index">
+    <div class="imagenMiniPrincipal">
+      <img [src]="noticia.urlImg"  alt="Presidente" class="img-fluid imagenMini" height="100px">
+    </div>
+    <div class="InfoMiniNoticiaPrincipal">
+      <p class="h6 text-justify tituloMiniNoticia">{{noticia.titulo}}</p>
+      <p class="text-sm-left fechaMiniNoticia">{{noticia.fecha}}</p>
+    </div>
+  </div>

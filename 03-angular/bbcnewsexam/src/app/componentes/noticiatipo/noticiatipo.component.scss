@@ -1,0 +1,23 @@
+
+.contenedorNoticiaTipo{
+  display: inline-block;
+  box-sizing: content-box;
+  height: 300px;
+}
+.imgNoticiaTipo{
+  width: 50%;
+  float: left;
+}
+.imgNoticiaTipo img{
+  width: 100%;
+}
+.tituloNoticiaTipo{
+  width: 50%;
+  float: left;
+}
+.tituloNoticia:hover{
+  text-decoration: underline;
+}
+.tituloNoticiaTipo p{
+  padding-left: 15px;
+}

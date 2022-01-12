@@ -1,0 +1,29 @@
+.separador{
+  margin-top: 20px;
+}
+.separador p:hover{
+  text-decoration: underline;
+}
+.tituloSeparador{
+  float: left;
+  box-sizing: content-box;
+  font-weight: normal;
+  width: 18%;
+}
+
+.separador .abrirContenido{
+  text-align: right;
+  width: 8%;
+  float: left;
+}
+hr{
+  width: 100%;
+  float: left;
+  padding-top: 1px;
+}
+.linea{
+  width: 74%;
+  box-sizing: content-box;
+  float: left;
+}
+
