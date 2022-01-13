@@ -16,6 +16,7 @@ import {EsAdministradorGuard} from "./services/auth/esadministrador.guard";
 import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagenes.module";
 import {BannerImagenesComponent} from "./componentes/banner-imagenes/banner-imagenes/banner-imagenes.component";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     BannerImagenesModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   //servicios
   providers: [
