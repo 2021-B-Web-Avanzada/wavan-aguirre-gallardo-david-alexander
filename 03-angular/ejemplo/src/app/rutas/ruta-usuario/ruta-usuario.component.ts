@@ -44,7 +44,10 @@ export class RutaUsuarioComponent implements OnInit {
     );
 
   }
-  gestionarUsuario(idUsuario:number){}
+  gestionarUsuario(idUsuario:number){
+    const ruta = ['/app','usuario',idUsuario];//app/usuario/1
+    this.router.navigate(ruta);
+  }
   buscarUsuarios(){
     this.userJphService
       .buscarTodos({
