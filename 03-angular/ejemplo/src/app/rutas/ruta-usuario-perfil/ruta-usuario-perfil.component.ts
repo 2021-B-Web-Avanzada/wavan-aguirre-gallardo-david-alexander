@@ -13,6 +13,15 @@ export class RutaUsuarioPerfilComponent implements OnInit {
   idUsuario = 0;
   usuarioActual?:UserJphInterface;
   formGroup?:FormGroup;
+  valueKnob = 30;
+  items = [
+    {
+      label: 'Update', icon: 'pi pi-refresh', command: () => {
+        console.log("Update hola");
+      },
+    },
+    {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']}
+  ];
   constructor(
     private readonly activatedRoute:ActivatedRoute,
     private readonly userJph:UserJphService,
@@ -60,7 +69,8 @@ export class RutaUsuarioPerfilComponent implements OnInit {
             Validators.required,
             Validators.minLength(3),
           ]
-        )
+        ),
+        esAdministrador: new FormControl(true)
       }
     );
     const cambio$ = this.formGroup.valueChanges;
@@ -112,5 +122,8 @@ export class RutaUsuarioPerfilComponent implements OnInit {
         });
     }
 
+  }
+  guardar(){
+    console.log("Guardar")
   }
 }
