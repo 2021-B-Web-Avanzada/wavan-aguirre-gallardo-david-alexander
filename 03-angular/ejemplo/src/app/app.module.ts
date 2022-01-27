@@ -24,6 +24,9 @@ import {KnobModule} from "primeng/knob";
 import {SplitButton, SplitButtonModule} from "primeng/splitbutton";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
+import { ModalEjemploComponent } from './componentes/modales/modal-ejemplo/modal-ejemplo.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {NgbButtonsModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import {MatButtonModule} from "@angular/material/button";
     RutaUsuarioComponent,
     RutaPostComponent,
     RutaAppComponent,
-    RutaUsuarioPerfilComponent
+    RutaUsuarioPerfilComponent,
+    ModalEjemploComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,10 @@ import {MatButtonModule} from "@angular/material/button";
     KnobModule,
     SplitButtonModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    NgbModule,
+    NgbButtonsModule
   ],
   //servicios
   providers: [
