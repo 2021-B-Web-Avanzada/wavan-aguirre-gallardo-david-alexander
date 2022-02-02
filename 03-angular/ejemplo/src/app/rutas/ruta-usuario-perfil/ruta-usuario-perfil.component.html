@@ -2,6 +2,23 @@
   <p>{{usuarioActual.name}}</p>
 </div>
 <div class="container" *ngIf="formGroup">
+  <p-knob [(ngModel)]="valueKnob" [min]="0" [max]="60" ></p-knob>
+  <p-splitButton label="Save" icon="pi pi-check" (onClick)="guardar()" [model]="items">Holaa</p-splitButton><br>
+  <button id="basic" type="button" mat-button color="accent" (click)="abrirDialogo()">
+    Guardar
+  </button>
+<!--  bootstrap con angular-->
+  <div class="btn-group btn-group-toggle">
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" ngbButton [(ngModel)]="model.middle"> Middle
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" ngbButton [(ngModel)]="model.right"> Right
+    </label>
+  </div>
   <form [formGroup]="formGroup">
     <div class="mb-3">
       <label for="email"
@@ -31,8 +48,21 @@
         </div>
       </div>
     </div>
+    <div class="mb-3">
+      <label for="esadmin"
+             class="form-label">
+        Es administrador
+      </label>
+      <p-inputSwitch formControlName="esAdministrador">k</p-inputSwitch>
+      <div id="esadmin"
+           class="form-text">
+        Seleccione si es administrador
+      </div>
+    </div>
+
     <button class="btn btn-primary"
-    [disabled]="formGroup.invalid" >
+    [disabled]="formGroup.invalid"
+    (click)="actualizarUsuario()">
       GUARDAR
     </button>
     <!-- name -->
@@ -96,4 +126,6 @@
       </div>
     </div>
   </form>
+
 </div>
+
