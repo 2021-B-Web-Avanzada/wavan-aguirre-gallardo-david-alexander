@@ -6,15 +6,19 @@ import { AppComponent } from './app.component';
 import {SupermercadoService} from "./services/http/supermercado/supermercado.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ProductoService} from "./services/http/producto/producto.service";
+import { SupermercadosComponent } from './rutas/supermercados/supermercados.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SupermercadosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     SupermercadoService,

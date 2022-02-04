@@ -86,8 +86,8 @@ function getSupermercados(){
         idMercado=Math.floor(Math.random()*((9999-1)+1));
         nombreSupermercado = respuesta.nombreMercado;
         identificadorSupermercado = Symbol.for(nombreSupermercado);
-        detalle.propietario=respuesta.nombrePropietario;
-        detalle.CI=respuesta.cedulaPropietario;
+        detalle.propietario=respuesta.propietario;
+        detalle.CI=respuesta.cedulaProp;
         cantidadSucursales = respuesta.cantidadSucursales;
         const infoMercado = idMercado+'|'+nombreSupermercado+'|'+cantidadSucursales+'|'+String(identificadorSupermercado)
             +'|'+detalle.propietario+'|'+detalle.CI+'|'+empleados+'|'+cantidadDeudaSRI+'\n';

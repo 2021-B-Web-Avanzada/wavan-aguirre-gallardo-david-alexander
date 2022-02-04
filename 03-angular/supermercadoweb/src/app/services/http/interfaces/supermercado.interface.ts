@@ -1,8 +1,8 @@
 export interface SupermercadoInterface{
-  id:number;
-  nombre:string;
+  idMercado:number;
+  nombreMercado:string;
   sucursales:number;
-  nombrePropietario:string;
-  cedulaPropietario:string;
+  propietario:string;
+  cedulaProp:string;
   deudaSRI:number;
 }

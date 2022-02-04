@@ -16,16 +16,16 @@ export class AppComponent {
 
   }
   ngOnInit():void{
-    this.supermercado
-      .buscarTodos()
-      .subscribe({
-        next:(datos)=>{
-          console.log(datos);
-        },
-        error: (error)=>{
-          console.error({error});
-        },
-      });
+    // this.supermercado
+    //   .buscarTodos()
+    //   .subscribe({
+    //     next:(datos)=>{
+    //       console.log(datos);
+    //     },
+    //     error: (error)=>{
+    //       console.error({error});
+    //     },
+    //   });
       this.producto.buscarTodos()
         .subscribe({
             next:(datos)=>{

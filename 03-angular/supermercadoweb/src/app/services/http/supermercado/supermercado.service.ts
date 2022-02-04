@@ -14,15 +14,26 @@ export class SupermercadoService {
   ) {
 
   }
-  buscarTodos():Observable<SupermercadoInterface[]>{
+  buscarTodos(paramsConsulta?:any):Observable<SupermercadoInterface[]>{
     const url = environment.urlAPI+'api/mercadoes';
+    Object
+      .keys(paramsConsulta)
+      .forEach( k =>{
+        if(!paramsConsulta[k]){
+          delete paramsConsulta[k]
+        }
+      });
     return this.httpCliente
-      .get(url)
+      .get(url,
+        {
+          params:paramsConsulta
+        }
+        )
       .pipe(
         map(
           (resultadoEnData:Object)=>resultadoEnData as SupermercadoInterface[]
         )
-      )
+      );
 
   }
   buscarUno(id:number):Observable<SupermercadoInterface>{
