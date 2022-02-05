@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {SupermercadoService} from "./services/http/supermercado/supermercado.service";
 import {ProductoService} from "./services/http/producto/producto.service";
+import {SupermercadosComponent} from "./rutas/supermercados/supermercados.component";
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,11 @@ import {ProductoService} from "./services/http/producto/producto.service";
 })
 export class AppComponent {
   title = 'supermercadoweb';
+
   constructor(
     private readonly supermercado:SupermercadoService,
     private readonly producto:ProductoService
+
   ) {
 
   }
@@ -37,4 +40,5 @@ export class AppComponent {
         }
         );
   }
+
 }

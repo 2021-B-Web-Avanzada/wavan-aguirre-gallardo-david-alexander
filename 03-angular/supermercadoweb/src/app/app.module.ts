@@ -7,18 +7,23 @@ import {SupermercadoService} from "./services/http/supermercado/supermercado.ser
 import {HttpClientModule} from "@angular/common/http";
 import {ProductoService} from "./services/http/producto/producto.service";
 import { SupermercadosComponent } from './rutas/supermercados/supermercados.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RegistromercadoComponent } from './rutas/supermercados/registromercado/registromercado.component';
+import { MercadoComponent } from './rutas/supermercados/mercado/mercado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SupermercadosComponent
+    SupermercadosComponent,
+    RegistromercadoComponent,
+    MercadoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     SupermercadoService,

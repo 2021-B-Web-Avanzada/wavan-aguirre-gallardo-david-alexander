@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {SupermercadosComponent} from "./rutas/supermercados/supermercados.component";
+import {RegistromercadoComponent} from "./rutas/supermercados/registromercado/registromercado.component";
+import {MercadoComponent} from "./rutas/supermercados/mercado/mercado.component";
 
 const routes: Routes = [
   {
@@ -9,10 +11,16 @@ const routes: Routes = [
     children:[
       {
         path:'mercado',
-        component:SupermercadosComponent
+        component:MercadoComponent
+      },
+      {
+        path:'registromercado',
+        component:RegistromercadoComponent
       }
     ]
   }
+
+
 ];
 
 @NgModule({

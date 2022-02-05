@@ -15,7 +15,7 @@ export class SupermercadoService {
 
   }
   buscarTodos(paramsConsulta?:any):Observable<SupermercadoInterface[]>{
-    const url = environment.urlAPI+'api/mercadoes';
+    const url = environment.urlAPI+'api/mercadoes/';
     Object
       .keys(paramsConsulta)
       .forEach( k =>{

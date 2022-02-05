@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {SupermercadoService} from "../../services/http/supermercado/supermercado.service";
-import {ProductoService} from "../../services/http/producto/producto.service";
-import {SupermercadoInterface} from "../../services/http/interfaces/supermercado.interface";
+import {SupermercadoInterface} from "../../../services/http/interfaces/supermercado.interface";
+import {SupermercadoService} from "../../../services/http/supermercado/supermercado.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-supermercados',
-  templateUrl: './supermercados.component.html',
-  styleUrls: ['./supermercados.component.scss']
+  selector: 'app-mercado',
+  templateUrl: './mercado.component.html',
+  styleUrls: ['./mercado.component.scss']
 })
-export class SupermercadosComponent implements OnInit {
+export class MercadoComponent implements OnInit {
+
   set arrayMarkets(value: SupermercadoInterface[]) {
     this._arrayMarkets = value;
   }
@@ -18,7 +18,6 @@ export class SupermercadosComponent implements OnInit {
   }
   public _arrayMarkets: SupermercadoInterface[]=[];
   buscarMercado = '';
-  mostrarListaMercados = true;
   constructor(
     private readonly supermercadoServ:SupermercadoService,
     private readonly router:Router,
@@ -26,7 +25,7 @@ export class SupermercadosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mostrarListaMercados=true;
+
     const parametrosConsulta$= this.activatedRoute
       .queryParams;
     parametrosConsulta$.subscribe(
@@ -39,12 +38,7 @@ export class SupermercadosComponent implements OnInit {
       ()=>{}
     );
   }
-  ocultarListaMercados(){
-    this.mostrarListaMercados=false;
-  }
-  mostrarListaDeMercados(){
-    this.mostrarListaMercados=true;
-  }
+
   actualizarParametrosDeConsulta(){
     this.router.navigate(
       ['/supermercado','mercado'],

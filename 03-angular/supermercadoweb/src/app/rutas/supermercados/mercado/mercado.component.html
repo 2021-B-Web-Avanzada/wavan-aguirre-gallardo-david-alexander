@@ -1,0 +1,35 @@
+
+<form class="d-flex justify-content-end col-sm-5" style="padding-bottom: 20px" >
+  <input
+    id="buscarMercado"
+    name="buscarMercado"
+    class="form-control"
+    [(ngModel)]="buscarMercado"
+    type="text"
+    placeholder="Search"
+    aria-label="Search">
+  <button class="btn btn-outline-success" type="submit" (click)="actualizarParametrosDeConsulta()">Search</button>
+  <div class="col">
+    <button type="button" class="btn btn-secondary" style="margin-left: 15px" [routerLink]="['/supermercado','registromercado']" >Nuevo</button>
+  </div>
+</form>
+
+<div class="row gx-5 row-cols-3 g-4">
+  <div class="col" *ngFor="let mercado of _arrayMarkets; let i = index">
+    <div class="p-3 border bg-light">
+      Nombre: {{mercado.nombreMercado.trim()}}<br>
+      Sucursales:{{mercado.sucursales}}<br>
+      Nombre Propietario:{{mercado.propietario}}<br>
+      Cedula Propietario:{{mercado.cedulaProp}}<br>
+      <br>
+      <div class="row row-cols-2">
+        <div class="col text-center">
+          <button type="button" class="btn btn-primary">Actualizar</button>
+        </div>
+        <div class="col text-center">
+          <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
