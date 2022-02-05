@@ -20,7 +20,8 @@ export class RegistromercadoComponent implements OnInit {
           },
           [
             Validators.pattern("[a-zA-Z]+([\\s][a-zA-Z]*)*"),
-            Validators.minLength(3)
+            Validators.minLength(3),
+            Validators.required
           ]
         ),
         propietario:new FormControl(
@@ -39,7 +40,17 @@ export class RegistromercadoComponent implements OnInit {
             disabled:false
           },
           [
-            Validators.pattern("[0-9]{10,10}")
+            Validators.pattern("[0-9]{10,10}"),
+            Validators.required
+          ]
+        ),
+        sucursales:new FormControl(
+          {
+            value:'',
+            disabled:false
+          },
+          [
+            Validators.required
           ]
         )
       }
