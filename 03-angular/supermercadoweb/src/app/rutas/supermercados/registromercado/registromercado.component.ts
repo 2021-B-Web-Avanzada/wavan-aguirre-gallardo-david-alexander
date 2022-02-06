@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
+import {SupermercadoService} from "../../../services/http/supermercado/supermercado.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registrousuario',
@@ -8,9 +10,15 @@ import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 })
 export class RegistromercadoComponent implements OnInit {
   formGroup!:FormGroup;
-  constructor(private readonly formBuilder:FormBuilder) { }
+  constructor(
+    private readonly formBuilder:FormBuilder,
+    private readonly mercadoService:SupermercadoService,
+    private readonly router:Router) { }
 
   ngOnInit(): void {
+    this.prepararFormulario();
+  }
+  prepararFormulario(){
     this.formGroup=this.formBuilder.group(
       {
         nombreMercado: new FormControl(
@@ -72,5 +80,39 @@ export class RegistromercadoComponent implements OnInit {
       }
     );
   }
-
+  prepararObjeto(){
+    if(this.formGroup){
+      const nombreMercado= this.formGroup.get('nombreMercado');
+      const propietario = this.formGroup.get('propietario');
+      const cedulaProp = this.formGroup.get('cedulaProp');
+      const sucursales = this.formGroup.get('sucursales');
+      if(nombreMercado&&propietario&&cedulaProp&&sucursales){
+        return{
+          nombreMercado:nombreMercado.value,
+          propietario:propietario.value,
+          cedulaProp:cedulaProp.value,
+          sucursales:sucursales.value
+        }
+      }
+    }
+    return {
+      nombreMercado:'',
+      propietario:'',
+      cedulaProp:'',
+      sucursales:0
+    }
+  }
+  registrarMercado(){
+    const valoresARegistrar = this.prepararObjeto();
+    const registro$ = this.mercadoService.registrarMercado(valoresARegistrar);
+    registro$.subscribe(
+      {
+       next:(datos)=>{
+         console.log({datos});
+         const url = ['/supermercado','mercado'];
+         this.router.navigate(url);
+       }
+      }
+    )
+  }
 }

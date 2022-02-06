@@ -10,6 +10,8 @@ import { SupermercadosComponent } from './rutas/supermercados/supermercados.comp
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegistromercadoComponent } from './rutas/supermercados/registromercado/registromercado.component';
 import { MercadoComponent } from './rutas/supermercados/mercado/mercado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialog} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -23,11 +25,14 @@ import { MercadoComponent } from './rutas/supermercados/mercado/mercado.componen
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     SupermercadoService,
-    ProductoService
+    ProductoService,
+    MatDialog
   ],
   bootstrap: [AppComponent]
 })

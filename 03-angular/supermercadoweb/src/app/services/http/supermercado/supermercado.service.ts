@@ -3,6 +3,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {SupermercadoInterface} from "../interfaces/supermercado.interface";
 import {environment} from "../../../../environments/environment";
+import {CreatemercadoInterface} from "../interfaces/createmercado.interface";
 
 @Injectable({
   providedIn: 'any'
@@ -45,5 +46,28 @@ export class SupermercadoService {
           (resultadoEnData:Object)=>resultadoEnData as SupermercadoInterface
         )
       )
+  }
+  registrarMercado(datosARegistrar:CreatemercadoInterface):Observable<SupermercadoInterface>{
+    const url = environment.urlAPI+'api/mercadoes';
+    return this.httpCliente.post(
+      url, datosARegistrar
+    ).pipe(
+      map(
+        (resultado)=> resultado as SupermercadoInterface
+      )
+    );
+  }
+  eliminarMercado(id:number){
+    const url = environment.urlAPI+'api/mercadoes/'+id;
+
+    return this.httpCliente.delete(
+      url
+    ).pipe(
+      map(
+        (resultado)=>{
+          resultado as SupermercadoInterface
+        }
+      )
+    );
   }
 }

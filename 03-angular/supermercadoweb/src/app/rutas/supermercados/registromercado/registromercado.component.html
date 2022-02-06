@@ -80,7 +80,10 @@
       <button
         type="submit"
         [disabled]="formGroup.invalid"
-        class="btn btn-primary w-25 mx-auto">Registrar</button>
+        (click)="registrarMercado()"
+        class="btn btn-primary w-25 mx-auto">
+        Registrar
+      </button>
     </div>
 
   </form>

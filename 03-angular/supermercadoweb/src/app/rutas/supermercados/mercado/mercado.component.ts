@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {SupermercadoInterface} from "../../../services/http/interfaces/supermercado.interface";
 import {SupermercadoService} from "../../../services/http/supermercado/supermercado.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+
 
 @Component({
   selector: 'app-mercado',
@@ -18,11 +20,15 @@ export class MercadoComponent implements OnInit {
   }
   public _arrayMarkets: SupermercadoInterface[]=[];
   buscarMercado = '';
+
   constructor(
     private readonly supermercadoServ:SupermercadoService,
     private readonly router:Router,
-    private readonly activatedRoute:ActivatedRoute
-  ) { }
+    private readonly activatedRoute:ActivatedRoute,
+    public dialogo:MatDialog
+  ) {
+
+  }
 
   ngOnInit(): void {
 
@@ -64,5 +70,36 @@ export class MercadoComponent implements OnInit {
         }
       );
   }
-
+  eliminarMercado(id:number){
+    // this.supermercadoServ.eliminarMercado(id)
+    //   .subscribe(
+    //     (data)=>{
+    //       console.log(data);
+    //       // const urlRecarga = ['/supermercado','mercado'];
+    //       // this.router.navigate(urlRecarga);
+    //       this.buscarMercados();
+    //     },
+    //     (error)=>{
+    //       console.log({error});
+    //     }
+    //   );
+  }
+  abrirDialogoConfirmacionEliminar(){
+  //   const referenciaDialogo = this.dialogo.open(
+  //     ModalEjemploComponent,
+  //     {
+  //       disableClose:true,
+  //       data:{
+  //         animal:'panda',
+  //       },
+  //     }
+  //   );
+  //   const despuesCerrado$ = referenciaDialogo.afterClosed();
+  //   despuesCerrado$
+  //     .subscribe(
+  //       (datos)=>{
+  //         console.log(datos);
+  //       }
+  //     );
+  }
 }
