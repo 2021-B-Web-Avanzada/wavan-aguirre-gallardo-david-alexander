@@ -73,7 +73,7 @@ export class MercadoComponent implements OnInit {
         }
       );
   }
-  eliminarMercado(id:number|undefined){
+  eliminarMercado(id?:number){
     this.supermercadoServ.eliminarMercado(id)
       .subscribe(
         (data)=>{

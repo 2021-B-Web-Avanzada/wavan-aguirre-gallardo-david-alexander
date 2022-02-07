@@ -1,14 +1,13 @@
-export interface ProductoInterface{
-  id:number;
-  nombreProducto:string;
+export interface CreateproductoInterface{
+  nombre:string;
   precio:number;
   categoria:string;
-  pesogr:number;
-  caloriasgr:number;
+  pesoGr:number;
+  caloriasGr:number;
   proveedor:number;
   stock:number;
   disponibilidad:boolean;
   fechaElab:string;
-  fechaVenc:string;
+  fechaVence:string;
   fkMercado:number;
 }

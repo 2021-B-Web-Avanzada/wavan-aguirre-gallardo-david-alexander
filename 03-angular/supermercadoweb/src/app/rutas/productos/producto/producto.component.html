@@ -1,0 +1,43 @@
+
+<form class="d-flex justify-content-end col-sm-5" style="padding-bottom: 20px" >
+  <input
+    id="buscarMercado"
+    name="buscarMercado"
+    class="form-control"
+    [(ngModel)]="buscarProducto"
+    type="text"
+    placeholder="Search"
+    aria-label="Search">
+  <button class="btn btn-outline-success" type="submit" (click)="actualizarParametrosDeConsulta()">Search</button>
+  <div class="col">
+    <button type="button" class="btn btn-secondary" style="margin-left: 15px" [routerLink]="['/productos','registroproducto']" >Nuevo</button>
+  </div>
+</form>
+
+<div class="row gx-5 row-cols-3 g-4">
+  <div class="col" *ngFor="let producto of _arrayProducts; let i = index">
+    <div class="p-3 border bg-light">
+      Nombre:{{producto.nombreProducto}}<br>
+      Precio:{{producto.precio}}<br>
+      Categoria:{{producto.categoria}}<br>
+      Peso en gr:{{producto.pesogr}}<br>
+      Calorias Gr:{{producto.caloriasgr}}<br>
+      Proveedor:{{producto.proveedor}}<br>
+      Stock:{{producto.stock}}<br>
+      Disponibilidad:{{producto.disponibilidad}}<br>
+      Fecha Elab.:{{producto.fechaElab}}<br>
+      Fecha Venc.:{{producto.fechaVenc}}<br>
+      Mercado Asociado:{{_arrayNombresMercados[i]}}<br>
+      <br>
+      <div class="row row-cols-2">
+        <div class="col text-center">
+          <button type="button" class="btn btn-primary" (click)="actualizarProducto(producto.id)">Actualizar</button>
+        </div>
+        <div class="col text-center">
+          <button type="button" class="btn btn-danger" (click)="abrirDialogoConfirmacionEliminar(producto)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

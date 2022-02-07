@@ -15,6 +15,11 @@ import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import { ModalBorrarmercadoComponent } from './componentes/modales/modal-borrarmercado/modal-borrarmercado.component';
 import {MatButtonModule} from "@angular/material/button";
 import { ActualizarmercadoComponent } from './rutas/supermercados/actualizarmercado/actualizarmercado.component';
+import { ProductosComponent } from './rutas/productos/productos.component';
+import { ProductoComponent } from './rutas/productos/producto/producto.component';
+import { RegistroproductoComponent } from './rutas/productos/registroproducto/registroproducto.component';
+import { ActualizarproductoComponent } from './rutas/productos/actualizarproducto/actualizarproducto.component';
+import { ModalBorrarproductoComponent } from './componentes/modales/modal-borrarproducto/modal-borrarproducto.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,12 @@ import { ActualizarmercadoComponent } from './rutas/supermercados/actualizarmerc
     RegistromercadoComponent,
     MercadoComponent,
     ModalBorrarmercadoComponent,
-    ActualizarmercadoComponent
+    ActualizarmercadoComponent,
+    ProductosComponent,
+    ProductoComponent,
+    RegistroproductoComponent,
+    ActualizarproductoComponent,
+    ModalBorrarproductoComponent
   ],
   imports: [
     BrowserModule,
