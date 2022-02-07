@@ -122,5 +122,19 @@ export class ProductoComponent implements OnInit {
     const ruta = ['/productos','actualizarproducto',idProducto];
     this.router.navigate(ruta);
   }
+  obtenerNombreMercadoProducto(idMercado:number){
+    this.mercadoService.buscarUno(idMercado)
+      .subscribe(
+        (datos)=>{
+          console.log(datos);
+          return datos.nombreMercado;
+        },
+        (error)=>{
+          console.log(error);
+        },
+        ()=>{
 
+        }
+      )
+  }
 }

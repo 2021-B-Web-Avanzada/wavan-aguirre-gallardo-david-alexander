@@ -1,1 +1,230 @@
-<p>registroproducto works!</p>
+<div class="container-fluid mx-auto">
+  <div class="row mx-auto m-0" style="text-align: center">
+    <div class="h2">Registro de Producto</div>
+  </div>
+  <form  class="p-5 w-75 mx-auto"[formGroup]="formGroup">
+    <div class="form-group p-3" >
+      <label for="nombreProducto">Nombre producto:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombreProducto"
+        formControlName="nombreProducto"
+        aria-describedby="emailHelp"
+        placeholder="Ej.: Gomitas Glum">
+      <div *ngIf="formGroup.get('nombreProducto')">
+        <div class="p-2 mb-1 bg-danger text-white"
+             role="alert" *ngIf="formGroup.get('nombreProducto')?.invalid &&
+        formGroup.get('nombreProducto')?.touched &&
+        formGroup.get('nombreProducto')?.dirty ">
+          <span *ngIf="formGroup.get('nombreProducto')?.hasError('pattern')">
+            Caracteres incorrectos.
+          </span>
+          <span *ngIf="formGroup.get('nombreProducto')?.hasError('minlength')">
+            Nombre de producto demasiado corto.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group p-3">
+          <label for="precio">Precio:</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">$</div>
+            </div>
+            <input
+              type="number"
+              id="precio"
+              formControlName="precio"
+              class="form-control"
+              id="inlineFormInputGroup"
+              placeholder="5.3">
+          </div>
+          <div *ngIf="formGroup.get('precio')">
+            <div class="p-2 mb-1 bg-danger text-white"
+                 role="alert" *ngIf="formGroup.get('precio')?.invalid &&
+                  formGroup.get('precio')?.touched &&
+                  formGroup.get('precio')?.dirty ">
+              <span *ngIf="formGroup.get('precio')?.hasError('min')">
+              Valor no permitido.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group p-3">
+          <label for="stock">Stock:</label>
+          <input type="number"
+                 class="form-control"
+                 id="stock"
+                 formControlName="stock"
+                 placeholder="45">
+          <div *ngIf="formGroup.get('stock')">
+            <div class="p-2 mb-1 bg-danger text-white"
+                 role="alert" *ngIf="formGroup.get('stock')?.invalid &&
+                formGroup.get('stock')?.touched &&
+                formGroup.get('stock')?.dirty ">
+                <span *ngIf="formGroup.get('stock')?.hasError('min')">
+                  Valor no permitido.
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group p-3">
+          <label for="categoria">Categoría:</label>
+          <select
+            class="form-control"
+            id="categoria">
+            <option *ngFor="let categoria of arrayCategorias;let i=index" value="{{i}}">{{categoria}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <!--    proveedor input-->
+        <div class="form-group p-3 " >
+          <label for="proveedor">Proveedor:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="proveedor"
+            formControlName="proveedor"
+            aria-describedby="emailHelp"
+            placeholder="Ej.: Toni">
+          <div *ngIf="formGroup.get('proveedor')">
+            <div class="p-2 mb-1 bg-danger text-white"
+                 role="alert" *ngIf="formGroup.get('proveedor')?.invalid &&
+        formGroup.get('proveedor')?.touched &&
+        formGroup.get('proveedor')?.dirty ">
+          <span *ngIf="formGroup.get('proveedor')?.hasError('pattern')">
+            Caracteres incorrectos.
+          </span>
+              <span *ngIf="formGroup.get('proveedor')?.hasError('minlength')">
+            Nombre de proveedor demasiado corto.
+          </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group p-3">
+          <label for="pesogr">Peso gr:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="pesogr"
+            id="pesogr"
+            placeholder="6">
+        </div>
+        <div *ngIf="formGroup.get('pesogr')">
+          <div class="p-2 mb-1 bg-danger text-white"
+               role="alert" *ngIf="formGroup.get('pesogr')?.invalid &&
+                formGroup.get('pesogr')?.touched &&
+                formGroup.get('pesogr')?.dirty ">
+                <span *ngIf="formGroup.get('pesogr')?.hasError('min')">
+                  Valor no permitido.
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group p-3">
+          <label for="caloriasgr">Calorias gr:</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="caloriasgr"
+            id="caloriasgr"
+            placeholder="30">
+        </div>
+        <div *ngIf="formGroup.get('caloriasgr')">
+          <div class="p-2 mb-1 bg-danger text-white"
+               role="alert" *ngIf="formGroup.get('caloriasgr')?.invalid &&
+                formGroup.get('caloriasgr')?.touched &&
+                formGroup.get('caloriasgr')?.dirty ">
+                <span *ngIf="formGroup.get('caloriasgr')?.hasError('min')">
+                  Valor no permitido.
+                </span>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--    fechas elab input-->
+    <div class="row">
+      <div class="col">
+        <div class="form-group p-3 " >
+          <label for="proveedor">Fecha Elab.:</label>
+          <input
+            type="date"
+            min="2019-01-01"
+            class="form-control"
+            id="fechaElab"
+            formControlName="fechaElab"
+            aria-describedby="emailHelp"
+            placeholder="Ej.: Toni">
+          <div *ngIf="formGroup.get('fechaElab')">
+            <div class="p-2 mb-1 bg-danger text-white"
+                 role="alert" *ngIf="formGroup.get('fechaElab')?.invalid &&
+                  formGroup.get('fechaElab')?.touched &&
+                  formGroup.get('fechaElab')?.dirty ">
+                <span *ngIf="formGroup.get('fechaElab')?.hasError('pattern')">
+                    Caracteres incorrectos.
+                </span>
+              <span *ngIf="formGroup.get('fechaElab')?.hasError('minlength')">
+                  Nombre de proveedor demasiado corto.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <!--    input fecha vence-->
+        <div class="form-group p-3" >
+          <label for="proveedor">Fecha Venc.:</label>
+          <input
+            type="date"
+            min="2020-01-01"
+            class="form-control"
+            id="fechaVenc"
+            formControlName="fechaVenc"
+            aria-describedby="emailHelp"
+            placeholder="Ej.: Toni">
+          <div *ngIf="formGroup.get('fechaVenc')">
+            <div class="p-2 mb-1 bg-danger text-white"
+                 role="alert" *ngIf="formGroup.get('fechaVenc')?.invalid &&
+                  formGroup.get('fechaVenc')?.touched &&
+                  formGroup.get('fechaVenc')?.dirty ">
+                <span *ngIf="formGroup.get('fechaVenc')?.hasError('pattern')">
+                 Caracteres incorrectos.
+                </span>
+                <span *ngIf="formGroup.get('fechaVenc')?.hasError('minlength')">
+                  Nombre de proveedor demasiado corto.
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row mx-auto p-2">
+      <button
+        type="submit"
+        [disabled]="formGroup.invalid"
+        (click)="registrarProducto()"
+        class="btn btn-primary w-25 mx-auto">
+        Registrar
+      </button>
+    </div>
+
+  </form>
+</div>
