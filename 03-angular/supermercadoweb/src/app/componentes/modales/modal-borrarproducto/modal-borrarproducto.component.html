@@ -1,1 +1,24 @@
-<p>modal-borrarproducto works!</p>
+<h2 mat-dialog-title>¿Esta seguro de eliminar el producto ?</h2>
+<mat-dialog-content class="mat-typography">
+
+  <p style="color: #519de3">
+    Nombre producto:{{productoABorrar.nombreProducto}}
+  </p>
+
+  <p style="color: #519de3">Precio: {{productoABorrar.precio}}</p>
+  <p style="color: #519de3">Categoria: {{productoABorrar.categoria}}</p>
+  <p style="color: #519de3">Peso gr: {{productoABorrar.pesogr}}</p>
+  <p style="color: #519de3">Calorias gr: {{productoABorrar.caloriasgr}}</p>
+  <p style="color: #519de3">Proveedor: {{productoABorrar.proveedor}}</p>
+  <p style="color: #519de3">Stock: {{productoABorrar.stock}}</p>
+  <p style="color: #519de3">Disponibilidad: {{productoABorrar.disponibilidad}}</p>
+  <p style="color: #519de3">Fecha Elab.: {{productoABorrar.fechaElab}}</p>
+  <p style="color: #519de3">Fecha Venc.: {{productoABorrar.fechaVenc}}</p>
+  <p style="color: #519de3">Mercado Asociado: {{mercadoAsociado}}</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirmar</button>
+</mat-dialog-actions>
+

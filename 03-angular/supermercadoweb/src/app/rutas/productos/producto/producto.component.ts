@@ -95,16 +95,16 @@ export class ProductoComponent implements OnInit {
       ModalBorrarproductoComponent,
       {
         data:{
-          nombre:producto.nombreProducto,
+          nombreProducto:producto.nombreProducto,
           precio:producto.precio,
           categoria:producto.categoria,
-          pesoGr:producto.pesogr,
-          caloriasGr:producto.caloriasgr,
+          pesogr:producto.pesogr,
+          caloriasgr:producto.caloriasgr,
           proveedor:producto.proveedor,
           stock:producto.stock,
           disponibilidad:producto.disponibilidad,
           fechaElab:producto.fechaElab,
-          fechaVence:producto.fechaVenc,
+          fechaVenc:producto.fechaVenc,
           fkMercado:producto.fkMercado
         }
       }
@@ -113,7 +113,7 @@ export class ProductoComponent implements OnInit {
     despuesCerrad$.subscribe(
       (datos)=>{
         if(datos){
-          this.eliminarProducto(producto.id)
+          this.eliminarProducto(producto.idProducto)
         }
       }
     );
