@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, Injector, OnInit} from '@angular/core';
 import {SupermercadoInterface} from "../../../services/http/interfaces/supermercado.interface";
 import {SupermercadoService} from "../../../services/http/supermercado/supermercado.service";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
+import {ModalBorrarmercadoComponent} from "../../../componentes/modales/modal-borrarmercado/modal-borrarmercado.component";
 
 
 @Component({
@@ -10,6 +11,7 @@ import {MatDialog} from "@angular/material/dialog";
   templateUrl: './mercado.component.html',
   styleUrls: ['./mercado.component.scss']
 })
+@Injectable()
 export class MercadoComponent implements OnInit {
 
   set arrayMarkets(value: SupermercadoInterface[]) {
@@ -20,14 +22,15 @@ export class MercadoComponent implements OnInit {
   }
   public _arrayMarkets: SupermercadoInterface[]=[];
   buscarMercado = '';
-
+  private _injector:Injector;
   constructor(
     private readonly supermercadoServ:SupermercadoService,
     private readonly router:Router,
     private readonly activatedRoute:ActivatedRoute,
-    public dialogo:MatDialog
+    public dialogo:MatDialog,
+    injector:Injector
   ) {
-
+    this._injector=injector;
   }
 
   ngOnInit(): void {
@@ -70,36 +73,48 @@ export class MercadoComponent implements OnInit {
         }
       );
   }
-  eliminarMercado(id:number){
-    // this.supermercadoServ.eliminarMercado(id)
-    //   .subscribe(
-    //     (data)=>{
-    //       console.log(data);
-    //       // const urlRecarga = ['/supermercado','mercado'];
-    //       // this.router.navigate(urlRecarga);
-    //       this.buscarMercados();
-    //     },
-    //     (error)=>{
-    //       console.log({error});
-    //     }
-    //   );
+  eliminarMercado(id:number|undefined){
+    this.supermercadoServ.eliminarMercado(id)
+      .subscribe(
+        (data)=>{
+          console.log(data);
+          // const urlRecarga = ['/supermercado','mercado'];
+          // this.router.navigate(urlRecarga);
+          this.buscarMercados();
+        },
+        (error)=>{
+          console.log({error});
+        }
+      );
   }
-  abrirDialogoConfirmacionEliminar(){
-  //   const referenciaDialogo = this.dialogo.open(
-  //     ModalEjemploComponent,
-  //     {
-  //       disableClose:true,
-  //       data:{
-  //         animal:'panda',
-  //       },
-  //     }
-  //   );
-  //   const despuesCerrado$ = referenciaDialogo.afterClosed();
-  //   despuesCerrado$
-  //     .subscribe(
-  //       (datos)=>{
-  //         console.log(datos);
-  //       }
-  //     );
+  abrirDialogoConfirmacionEliminar(mercado:SupermercadoInterface){
+    if(!this.dialogo){
+      this.dialogo=this._injector.get(MatDialog);
+    }
+    const referenciaDialogo = this.dialogo.open(
+      ModalBorrarmercadoComponent,
+      {
+        data:{
+          idMercado:mercado.idMercado,
+          nombreMercado:mercado.nombreMercado,
+          propietario:mercado.propietario,
+          cedulaProp:mercado.cedulaProp,
+          sucursales:mercado.sucursales
+        }
+      }
+    );
+    const despuesCerrado$ = referenciaDialogo.afterClosed();
+    despuesCerrado$
+      .subscribe(
+        (datos)=>{
+          if(datos){
+            this.eliminarMercado(mercado.idMercado);
+          }
+        }
+      );
+  }
+  actualizarMercado(idMercado:number|undefined){
+    const ruta = ['/supermercado','actualizarmercado',idMercado];
+    this.router.navigate(ruta);
   }
 }

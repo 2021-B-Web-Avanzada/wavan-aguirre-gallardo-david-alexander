@@ -1,0 +1,91 @@
+<div class="container-fluid mx-auto">
+  <div class="row mx-auto m-0" style="text-align: center">
+    <div class="h2">Actualizar Mercado</div>
+  </div>
+  <form  class="p-5 w-75 mx-auto" [formGroup]="formGroup">
+    <div class="form-group p-3" >
+      <label for="nombreMercado">Nombre mercado:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombreMercado"
+        formControlName="nombreMercado"
+        aria-describedby="emailHelp"
+        placeholder="Ej.: Akí">
+      <div *ngIf="formGroup.get('nombreMercado')">
+        <div class="p-2 mb-1 bg-danger text-white"
+             role="alert" *ngIf="formGroup.get('nombreMercado')?.invalid &&
+        formGroup.get('nombreMercado')?.touched &&
+        formGroup.get('nombreMercado')?.dirty ">
+          <span *ngIf="formGroup.get('nombreMercado')?.hasError('pattern')">
+            Caracteres incorrectos.
+          </span>
+          <span *ngIf="formGroup.get('nombreMercado')?.hasError('minlength')">
+            Nombre de mercado demasiado corto.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group p-3">
+      <label for="propietario">Propietario:</label>
+      <input type="text"
+             class="form-control"
+             id="propietario"
+             formControlName="propietario"
+             placeholder="Ej. Alonzo Pérez">
+      <div *ngIf="formGroup.get('propietario')">
+        <div class="p-2 mb-1 bg-danger text-white"
+             role="alert" *ngIf="formGroup.get('propietario')?.invalid &&
+        formGroup.get('propietario')?.touched &&
+        formGroup.get('propietario')?.dirty ">
+          <span *ngIf="formGroup.get('propietario')?.hasError('pattern')">
+            Caracteres incorrectos.
+          </span>
+          <span *ngIf="formGroup.get('propietario')?.hasError('minlength')">
+            Nombre de propietario demasiado corto.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group p-3">
+      <label for="cedulaProp">Cédula propietario:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cedulaProp"
+        formControlName="cedulaProp"
+        placeholder="1756983215"
+        maxlength="10">
+      <div *ngIf="formGroup.get('cedulaProp')">
+        <div class="p-2 mb-1 bg-danger text-white"
+             role="alert" *ngIf="formGroup.get('cedulaProp')?.invalid &&
+        formGroup.get('cedulaProp')?.touched &&
+        formGroup.get('cedulaProp')?.dirty ">
+          <span *ngIf="formGroup.get('cedulaProp')?.hasError('pattern')">
+            Cédula de propietario inválida.
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group p-3">
+      <label for="sucursales">Número de Sucursales:</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="sucursales"
+        id="sucursales"
+        placeholder="6">
+    </div>
+    <div class="row mx-auto p-2">
+      <button
+        type="submit"
+        [disabled]="formGroup.invalid"
+        (click)="actualizarMercado()"
+        class="btn btn-primary w-25 mx-auto">
+        Actualizar
+      </button>
+    </div>
+
+  </form>
+</div>
+

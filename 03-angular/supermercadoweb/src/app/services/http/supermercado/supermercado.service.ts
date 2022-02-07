@@ -4,6 +4,7 @@ import {map, Observable} from "rxjs";
 import {SupermercadoInterface} from "../interfaces/supermercado.interface";
 import {environment} from "../../../../environments/environment";
 import {CreatemercadoInterface} from "../interfaces/createmercado.interface";
+import {ActualizarmercadoInterface} from "../interfaces/actualizarmercado.interface";
 
 @Injectable({
   providedIn: 'any'
@@ -39,6 +40,7 @@ export class SupermercadoService {
   }
   buscarUno(id:number):Observable<SupermercadoInterface>{
     const url = environment.urlAPI+'api/mercadoes/'+id;
+    console.log(url);
     return this.httpCliente
       .get(url)
       .pipe(
@@ -57,7 +59,7 @@ export class SupermercadoService {
       )
     );
   }
-  eliminarMercado(id:number){
+  eliminarMercado(id?:number){
     const url = environment.urlAPI+'api/mercadoes/'+id;
 
     return this.httpCliente.delete(
@@ -69,5 +71,16 @@ export class SupermercadoService {
         }
       )
     );
+  }
+  actualizarPorId(datosAActualizar:any,idMercado?:number):Observable<SupermercadoInterface>{
+    const url = environment.urlAPI+'api/mercadoes/'+idMercado;
+    console.log(datosAActualizar);
+    return this.httpCliente
+      .put(url,datosAActualizar)
+      .pipe(
+        map(
+          (resultado)=> resultado as SupermercadoInterface
+        )
+      );
   }
 }

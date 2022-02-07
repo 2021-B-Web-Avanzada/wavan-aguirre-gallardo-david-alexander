@@ -11,14 +11,19 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegistromercadoComponent } from './rutas/supermercados/registromercado/registromercado.component';
 import { MercadoComponent } from './rutas/supermercados/mercado/mercado.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { ModalBorrarmercadoComponent } from './componentes/modales/modal-borrarmercado/modal-borrarmercado.component';
+import {MatButtonModule} from "@angular/material/button";
+import { ActualizarmercadoComponent } from './rutas/supermercados/actualizarmercado/actualizarmercado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SupermercadosComponent,
     RegistromercadoComponent,
-    MercadoComponent
+    MercadoComponent,
+    ModalBorrarmercadoComponent,
+    ActualizarmercadoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,12 +32,13 @@ import {MatDialog} from "@angular/material/dialog";
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [
     SupermercadoService,
     ProductoService,
-    MatDialog
+    ModalBorrarmercadoComponent
   ],
   bootstrap: [AppComponent]
 })

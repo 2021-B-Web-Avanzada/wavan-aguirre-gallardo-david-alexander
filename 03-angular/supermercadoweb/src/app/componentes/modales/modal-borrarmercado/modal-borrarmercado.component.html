@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>¿Esta seguro de eliminar el mercado ?</h2>
+<mat-dialog-content class="mat-typography">
+
+    <p style="color: #519de3">
+      Nombre mercado:{{mercadoABorrar.nombreMercado}}
+    </p>
+
+  <p style="color: #519de3">Propietario: {{mercadoABorrar.propietario}}</p>
+  <p style="color: #519de3">Cédula propietario: {{mercadoABorrar.cedulaProp}}</p>
+  <p style="color: #519de3">Sucursales: {{mercadoABorrar.sucursales}}</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirmar</button>
+</mat-dialog-actions>
+
