@@ -6,22 +6,18 @@ import { Server, Socket } from 'socket.io';
         cors:{
             origin: '*',
         },
-        namespace: 'events'
     }
 )
 export class EventosGateway{
-    @SubscribeMessage('Hola')
+    @SubscribeMessage('hola')
     devolverHola(
         @MessageBody()
-        message,
+        message:{nombre:String},
         @ConnectedSocket()
         socket:Socket
     ){
-        console.log(socket);
         console.log(socket.id);
-        return {
-            message,
-            saludo:'Hola'
-        }
+        socket.broadcast.emit('escucharEventoHola',{mensaje:'Bienvenido'+message.nombre});
+        return 'ok';
     }
 }

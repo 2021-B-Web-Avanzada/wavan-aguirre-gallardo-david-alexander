@@ -10,9 +10,13 @@ export class WebsocketService{
     private socket:Socket
   ) {
   }
-  ejecutarEventoHola():Observable<any>{
-    return this.socket.emit('Hola',{
+  ejecutarEventoHola(){
+    const resp = this.socket.emit('hola',{
       nombre:'David'
     });
+    console.log(resp);
+  }
+  escucharEventoHola(){
+    return this.socket.fromEvent('escucharEventoHola');
   }
 }
