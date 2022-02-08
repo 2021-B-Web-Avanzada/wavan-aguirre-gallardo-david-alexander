@@ -64,12 +64,11 @@ export class ProductoComponent implements OnInit {
           this._arrayNombresMercados=[];
           for (let producto of this._arrayProducts) {
             this.mercadoService.buscarUno(producto.fkMercado).subscribe(
-              (data)=>{
+              {
+                next:(data)=>{
 
-                this._arrayNombresMercados.push(data.nombreMercado);
-              },
-              (error)=>{
-                console.log(error);
+                  this._arrayNombresMercados.push(data.nombreMercado);
+                }
               }
             );
           }

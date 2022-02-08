@@ -41,7 +41,7 @@ const routes: Routes = [
         component: RegistroproductoComponent
       },
       {
-        path: 'actualizarproducto',
+        path: 'actualizarproducto/:idProducto',
         component: ActualizarproductoComponent
       }
     ]
