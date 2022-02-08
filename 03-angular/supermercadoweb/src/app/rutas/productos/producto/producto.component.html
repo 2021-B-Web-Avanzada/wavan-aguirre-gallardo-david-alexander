@@ -22,12 +22,11 @@
       Categoria:{{producto.categoria}}<br>
       Peso en gr:{{producto.pesogr}}<br>
       Calorias Gr:{{producto.caloriasgr}}<br>
-      Proveedor:{{producto.proveedor}}<br>
       Stock:{{producto.stock}}<br>
       Disponibilidad:{{producto.disponibilidad}}<br>
-      Fecha Elab.:{{producto.fechaElab}}<br>
-      Fecha Venc.:{{producto.fechaVenc}}<br>
-      Mercado Asociado:{{_arrayNombresMercados[i]}}<br>
+      Fecha Elab.:{{datePipe.transform(producto.fechaElab,'dd-MM-YYYY')}}<br>
+      Fecha Venc.:{{datePipe.transform(producto.fechaVenc,'dd-MM-YYYY')}}<br>
+      Mercado Asociado:{{_arrayNombresMercados.get(producto.idProducto)}}<br>
       <br>
       <div class="row row-cols-2">
         <div class="col text-center">

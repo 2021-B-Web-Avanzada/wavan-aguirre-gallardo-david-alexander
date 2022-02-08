@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductoInterface} from "../../../services/http/interfaces/producto.interface";
 import {ModalBorrarproductoComponent} from "../../../componentes/modales/modal-borrarproducto/modal-borrarproducto.component";
+import{DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-producto',
@@ -13,8 +14,9 @@ import {ModalBorrarproductoComponent} from "../../../componentes/modales/modal-b
 })
 export class ProductoComponent implements OnInit {
   public _arrayProducts:ProductoInterface[]=[];
-  public _arrayNombresMercados:Array<string> =[];
+  public _arrayNombresMercados:Map<number,string> =new Map<number, string>();
   buscarProducto='';
+  datePipe:DatePipe=new DatePipe('en-US');
   constructor(
     private readonly productService:ProductoService,
     private readonly mercadoService:SupermercadoService,
@@ -61,13 +63,13 @@ export class ProductoComponent implements OnInit {
           console.log(error);
         },
         ()=>{
-          this._arrayNombresMercados=[];
+          this._arrayNombresMercados.clear();
           for (let producto of this._arrayProducts) {
             this.mercadoService.buscarUno(producto.fkMercado).subscribe(
               {
                 next:(data)=>{
 
-                  this._arrayNombresMercados.push(data.nombreMercado);
+                  this._arrayNombresMercados.set(producto.idProducto,data.nombreMercado);
                 }
               }
             );

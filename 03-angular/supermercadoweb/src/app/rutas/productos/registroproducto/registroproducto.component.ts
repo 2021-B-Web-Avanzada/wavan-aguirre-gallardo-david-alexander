@@ -170,7 +170,7 @@ export class RegistroproductoComponent implements OnInit {
       const proveedor = this.formGroup.get('proveedor');
       const stock = this.formGroup.get('stock');
       let disponibilidad =false;
-      if(stock?.value>=0){
+      if(stock?.value>0){
         disponibilidad=true;
       }
       const fechaElab = this.formGroup.get('fechaElab');
