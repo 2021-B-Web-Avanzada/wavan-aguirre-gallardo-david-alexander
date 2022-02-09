@@ -20,4 +20,37 @@ export class EventosGateway{
         socket.broadcast.emit('escucharEventoHola',{mensaje:'Bienvenido'+message.nombre});
         return 'ok';
     }
+    @SubscribeMessage('unirseSala')
+    unirseSala(
+        @MessageBody()
+        message:{salaId:string,nombre:string},
+        @ConnectedSocket()
+        socket:Socket
+    ){
+        socket.join(message.salaId);
+        const mensajeAEnviar: any={
+          mensaje: 'Bienvenido '+message.nombre
+        };
+        socket.broadcast.to(message.salaId)
+            .emit(
+                'escucharEventoUnirseSala',
+                mensajeAEnviar
+            );
+        return 'ok';
+    }
+    @SubscribeMessage('enviarMensaje')
+    enviarMensaje(
+        @MessageBody()
+            message:{salaId:string,nombre:string, mensaje:string},
+        @ConnectedSocket()
+            socket:Socket
+    ){
+        const nuevoMensaje = {
+            nombre: message.nombre,
+            mensaje:message.mensaje,
+            salaId:message.salaId
+        } as any;
+        socket.broadcast.to(message.salaId).emit('escucharEventoMensajeSala',nuevoMensaje);
+        return 'ok';
+    }
 }
