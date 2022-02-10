@@ -48,13 +48,13 @@ export class RutaSalaComponent implements OnInit,OnDestroy {
     const respuestaEscucharEventoMensajeSala=this.webSocketService.escucharEventoMensajeSala()
       .subscribe(
         {
-          next:(data)=>{
+          next:(data:any)=>{
             console.log("Enviaron mensaje ",data);
             this.arregloMensajes.push({
-              // salaId:data.salaId,
-              // nombre:data.nombre,
-              // mensaje:data.mensaje,
-              // posicion:data.nombre===this.nombre?'izq':'der'
+              salaId:data.salaId,
+              nombre:data.nombre,
+              mensaje:data.mensaje,
+              posicion:data.nombre===this.nombre?'izq':'der'
             });
           },
           error:(error)=>{
@@ -86,6 +86,12 @@ export class RutaSalaComponent implements OnInit,OnDestroy {
     this.arregloSuscripciones=[];
   }
   enviarMensaje(){
+    this.arregloMensajes.push({
+      salaId:this.salaId,
+      nombre:this.nombre,
+      mensaje:this.mensaje,
+      posicion:'izq'
+    });
     this.webSocketService.ejecutarEventoEnviarMensaje(
       +this.salaId,
       this.nombre,
