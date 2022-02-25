@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {SocketIoModule} from "ngx-socket-io";
 import { RutaHomejuegoComponent } from './rutas/ruta-homejuego/ruta-homejuego.component';
 import { RutaJuegoComponent } from './rutas/ruta-juego/ruta-juego.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RutaJuegoComponent } from './rutas/ruta-juego/ruta-juego.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     SocketIoModule.forRoot(
       {

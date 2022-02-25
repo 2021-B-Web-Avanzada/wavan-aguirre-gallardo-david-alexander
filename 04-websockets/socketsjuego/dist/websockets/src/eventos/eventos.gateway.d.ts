@@ -1,0 +1,15 @@
+import { Socket } from 'socket.io';
+export declare class EventosGateway {
+    devolverHola(message: {
+        nombre: String;
+    }, socket: Socket): string;
+    unirseSala(message: {
+        salaId: string;
+        nombre: string;
+    }, socket: Socket): string;
+    enviarMensaje(message: {
+        salaId: string;
+        nombre: string;
+        mensaje: string;
+    }, socket: Socket): string;
+}
