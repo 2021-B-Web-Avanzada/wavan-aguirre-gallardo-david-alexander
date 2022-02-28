@@ -9,8 +9,16 @@ const routes: Routes = [
     component:RutaHomejuegoComponent
   },
   {
+    path:"juego/:player1/:player2",
+    component:RutaJuegoComponent
+  },
+  {
     path:"juego",
     component:RutaJuegoComponent
+  },
+  {
+    path:"",
+    component:RutaHomejuegoComponent
   }
 ];
 

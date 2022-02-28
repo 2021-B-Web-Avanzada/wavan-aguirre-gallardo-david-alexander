@@ -1,41 +1,47 @@
-<div  class="container" style="padding: 15px 60px 84px 100px;background: #2DB3F7; margin-top: 0;margin-bottom: 0">
-  <form class="p-2 w-100 mx-auto">
-    <div class="d-inline-flex w-50">
+<div class="container-fluid" style="background: #2DB3F7">
+  <div  class="container" style="padding: 15px 60px 84px 100px;background: #2DB3F7; margin-top: 0;margin-bottom: 0">
+    <form class="p-2 w-100 mx-auto" [formGroup]="formGroup" >
+      <div class="d-inline-flex w-50">
 
-      <div class="row">
-        <div class="col text-center">
-          <label for="username" class="col-form-label">NOMBRE DEL JUGADOR</label>
-          <input class="form-control form-control" type="text" id="username"
-                 spellcheck="false">
-        </div>
-        <div class="w-100 d-none d-md-block"></div>
-        <div class="col text-center">
-          <label for="dificultad" class="col-form-label">DIFICULTAD OPONENTE</label>
-          <select class="form-select" aria-label="Default select example" id="dificultad">
-            <option value="1" selected>Fácil</option>
-            <option value="2">Media</option>
-            <option value="3">Difícil</option>
-          </select>
+        <div class="row">
+          <div class="col text-center">
+            <label for="username" class="col-form-label">NOMBRE DEL JUGADOR</label>
+            <input class="form-control form-control" type="text" id="username"
+                   formControlName="username" spellcheck="false">
+          </div>
+          <div class="w-100 d-none d-md-block"></div>
+          <div class="col text-center">
+            <label for="dificultad" class="col-form-label">DIFICULTAD OPONENTE</label>
+            <select class="form-select" aria-label="Default select example"
+                    formControlName="dificultad" id="dificultad">
+              <option value="1" selected>Fácil</option>
+              <option value="2">Media</option>
+              <option value="3">Difícil</option>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="w-50" style="float: right; padding: 85px 0 30px 150px" >
-      <button type="button" class="btn btn-primary btn-lg"
-              style="height: 107px; width: 306px;background: #060A47;color: #545A85;font-family: Mogra; font-size: 48px">
-        ¡A JUGAR!
-      </button>
-    </div>
-<!--      <div class="d-inline-flex align-content-center flex-wrap w-50" style="height: 100%">-->
-<!--        <div class="d-grid gap-2 mx-auto">-->
-<!--          <button type="button" class="btn btn-primary btn-lg"-->
-<!--                  style="height: 107px; width: 306px;background: #060A47;color: #545A85;font-family: Mogra; font-size: 48px">-->
-<!--            ¡A JUGAR!-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
+      <div class="w-50" style="float: right; padding: 85px 0 30px 150px" >
+        <button type="button" class="btn btn-primary btn-lg"
+                [disabled]="formGroup.invalid"
+                style="height: 107px; width: 306px;background: #060A47;color: #545A85;font-family: Mogra;
+                 font-size: 48px" (click)="jugar()" >
+          ¡A JUGAR!
+        </button>
+      </div>
+      <!--      <div class="d-inline-flex align-content-center flex-wrap w-50" style="height: 100%">-->
+      <!--        <div class="d-grid gap-2 mx-auto">-->
+      <!--          <button type="button" class="btn btn-primary btn-lg"-->
+      <!--                  style="height: 107px; width: 306px;background: #060A47;color: #545A85;font-family: Mogra; font-size: 48px">-->
+      <!--            ¡A JUGAR!-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--      </div>-->
 
-  </form>
+    </form>
 
 
+  </div>
 </div>
+
 
