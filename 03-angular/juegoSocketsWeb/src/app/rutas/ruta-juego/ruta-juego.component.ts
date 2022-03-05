@@ -5,6 +5,10 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {environment} from "../../../environments/environment";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalCargandoComponent} from "../../modales/modal-cargando/modal-cargando.component";
+import {ModalCargandojugadaComponent} from "../../modales/modal-cargandojugada/modal-cargandojugada.component";
+import {ModalGanadorComponent} from "../../modales/modal-ganador/modal-ganador.component";
+import {ModalEmpateComponent} from "../../modales/modal-empate/modal-empate.component";
+import {ModalPerdedorComponent} from "../../modales/modal-perdedor/modal-perdedor.component";
 
 
 @Component({
@@ -386,7 +390,12 @@ export class RutaJuegoComponent implements OnInit {
         this.llenarFormularioJugada2(this.datosJugadaRetador.jugada);
         this.verificarGanador(this.obtenerValorDeJugada(this.datosJugadaRetador.jugada),this.obtenerValorDeJugada(this.jugada));
       }
+    }else{
+      this.dialogCargar.open(
+        ModalCargandojugadaComponent
+      );
     }
+
   }
   obtenerValorDeJugada(jugada:string):string{
     if(jugada==="Piedra"){
@@ -402,46 +411,56 @@ export class RutaJuegoComponent implements OnInit {
   }
   verificarGanador(jugadaplayer1:string,jugadaplayer2:string){
     if(jugadaplayer1===jugadaplayer2){
-      console.log("Empate");
+      this.dialogCargar.open(ModalEmpateComponent)
     }
     if(jugadaplayer1==="1"&&jugadaplayer2==="2"){
       console.log("Ganador jugador 2");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }else{
+        this.dialogCargar.open(ModalGanadorComponent)
+      }
     }
     if(jugadaplayer1==="1"&&jugadaplayer2==="3"){
       console.log("Ganador jugador 1");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalGanadorComponent)
+      }else{
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }
     }
     if(jugadaplayer1==="2"&&jugadaplayer2==="1"){
       console.log("Ganador jugador 2");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }else{
+        this.dialogCargar.open(ModalGanadorComponent)
+      }
     }
     if(jugadaplayer1==="2"&&jugadaplayer2==="3"){
-      console.log("Ganador jugador 3");
+      console.log("Ganador jugador 2");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }else{
+        this.dialogCargar.open(ModalGanadorComponent)
+      }
     }
     if(jugadaplayer1==="3"&&jugadaplayer2==="1"){
-      console.log("Ganador jugador 1");
+      console.log("Ganador jugador 2");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }else{
+        this.dialogCargar.open(ModalGanadorComponent)
+      }
     }
     if(jugadaplayer1==="3"&&jugadaplayer2==="2"){
-      console.log("Ganador jugador 3");
-    }
-    if(jugadaplayer1==="1"&&jugadaplayer2==="2"){
-      console.log("Ganador jugador 2");
-    }
-    if(jugadaplayer1==="2"&&jugadaplayer2==="1"){
-      console.log("Ganador jugador 2");
-    }
-    if(jugadaplayer1==="3"&&jugadaplayer2==="1"){
       console.log("Ganador jugador 1");
+      if(environment.esPlayer1){
+        this.dialogCargar.open(ModalGanadorComponent)
+      }else{
+        this.dialogCargar.open(ModalPerdedorComponent)
+      }
     }
-    if(jugadaplayer1==="1"&&jugadaplayer2==="2"){
-      console.log("Ganador jugador 2");
-    }
-    if(jugadaplayer1==="3"&&jugadaplayer2==="2"){
-      console.log("Ganador jugador 3");
-    }
-    if(jugadaplayer1==="1"&&jugadaplayer2==="3"){
-      console.log("Ganador jugador 1");
-    }
-    if(jugadaplayer1==="2"&&jugadaplayer2==="3"){
-      console.log("Ganador jugador 3");
-    }
+
   }
 }

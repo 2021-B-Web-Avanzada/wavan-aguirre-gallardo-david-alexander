@@ -13,6 +13,11 @@ import {MatButtonModule} from "@angular/material/button";
 import { ModalCargandoComponent } from './modales/modal-cargando/modal-cargando.component';
 import { ModalGanadorComponent } from './modales/modal-ganador/modal-ganador.component';
 import { ModalPerdedorComponent } from './modales/modal-perdedor/modal-perdedor.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {ProgressBarModule} from "primeng/progressbar";
+import {ProgressSpinnerModule} from "primeng/progressspinner";
+import { ModalCargandojugadaComponent } from './modales/modal-cargandojugada/modal-cargandojugada.component';
+import { ModalEmpateComponent } from './modales/modal-empate/modal-empate.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,9 @@ import { ModalPerdedorComponent } from './modales/modal-perdedor/modal-perdedor.
     RutaJuegoComponent,
     ModalCargandoComponent,
     ModalGanadorComponent,
-    ModalPerdedorComponent
+    ModalPerdedorComponent,
+    ModalCargandojugadaComponent,
+    ModalEmpateComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { ModalPerdedorComponent } from './modales/modal-perdedor/modal-perdedor.
     ),
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressBarModule,
+    ProgressBarModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

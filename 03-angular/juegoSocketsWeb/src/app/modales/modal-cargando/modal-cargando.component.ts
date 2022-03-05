@@ -10,7 +10,7 @@ import {websocketsService} from "../../services/websockets/websockets.service";
   styleUrls: ['./modal-cargando.component.scss']
 })
 export class ModalCargandoComponent implements OnInit {
-
+  entroADialog=true
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data:any,
@@ -24,6 +24,7 @@ export class ModalCargandoComponent implements OnInit {
         {
           next:(data:any)=>{
             console.log("escucharevento presentar jugadores modal:",data);
+            this.entroADialog=false
             this.dialogRef.close()
           },
           error:(error:any)=>{
