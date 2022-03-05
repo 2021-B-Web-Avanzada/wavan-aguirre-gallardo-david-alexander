@@ -43,7 +43,7 @@ export class RutaHomejuegoComponent implements OnInit {
       {
         username:new FormControl(
           {
-            value:'da',
+            value:'',
             disabled:false
           },
           [
@@ -102,9 +102,11 @@ export class RutaHomejuegoComponent implements OnInit {
           next:(data:any)=>{
             console.log("escucharevento presentar jugadores:",data);
             environment.idSala=data.idSala.toString();
+            environment.esPlayer1=false;
             console.log(environment.idSala);
             this.player1=data.player1;
             this.player2=data.player2;
+            environment.esPlayer2=true;
             const ruta = ['/juego',this.player1,this.player2];
             this.router.navigate(ruta);
           },

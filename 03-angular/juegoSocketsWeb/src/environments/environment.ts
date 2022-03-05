@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   esPlayer1: false,
-  idSala:''
+  esPlayer2:false,
+  idSala:'',
+  llegoAlguien:false
 };
 
 /*

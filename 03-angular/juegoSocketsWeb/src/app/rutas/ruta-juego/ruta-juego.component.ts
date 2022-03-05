@@ -3,6 +3,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {websocketsService} from "../../services/websockets/websockets.service";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {environment} from "../../../environments/environment";
+import {MatDialog} from "@angular/material/dialog";
+import {ModalCargandoComponent} from "../../modales/modal-cargando/modal-cargando.component";
 
 
 @Component({
@@ -27,7 +29,8 @@ export class RutaJuegoComponent implements OnInit {
     private readonly activatedRoute:ActivatedRoute,
     private readonly webSocketService:websocketsService,
     private readonly formBuilder:FormBuilder,
-    private readonly router:Router
+    private readonly router:Router,
+    private readonly dialogCargar:MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -276,51 +279,63 @@ export class RutaJuegoComponent implements OnInit {
     );
   }
   logicaSalas(salaId:string,nombre:string) {
-    const respuestaEscucharEventoRealizarJugada=this.webSocketService.escucharEventoRealizarJugada()
+    const respuestaEscucharEventoRealizarJugada = this.webSocketService.escucharEventoRealizarJugada()
       .subscribe(
         {
-          next:(data:any)=>{
-            console.log("evento mensaje jugada =",data);
-            this.llegoJugadaRetador=true;
-            this.datosJugadaRetador=data;
-            if(this.dioClick){
-              if(environment.esPlayer1){
+          next: (data: any) => {
+            console.log("evento mensaje jugada =", data);
+            this.llegoJugadaRetador = true;
+            this.datosJugadaRetador = data;
+            if (this.dioClick) {
+              if (environment.esPlayer1) {
                 this.llenarFormularioJugada1(data.jugada);
-                this.verificarGanador(this.obtenerValorDeJugada(this.jugada),this.obtenerValorDeJugada(data.jugada));
-              }else{
+                this.verificarGanador(this.obtenerValorDeJugada(this.jugada), this.obtenerValorDeJugada(data.jugada));
+              } else {
                 this.llenarFormularioJugada2(data.jugada);
-                this.verificarGanador(this.obtenerValorDeJugada(data.jugada),this.obtenerValorDeJugada(this.jugada));
+                this.verificarGanador(this.obtenerValorDeJugada(data.jugada), this.obtenerValorDeJugada(this.jugada));
               }
             }
           },
-          error:(error)=>{
+          error: (error) => {
 
           }
         }
       )
-    const respuestaEscucharEventoUnirseSala= this.webSocketService.escucharEventoUnirseSala()
+    const respuestaEscucharEventoUnirseSala = this.webSocketService.escucharEventoUnirseSala()
       .subscribe(
         {
-          next:(data:any)=>{
-            console.log("Alguien entro ",data);
-            this.salaId=data.idSala;
-            this.player1=data.player1;
-            this.player2=data.player2;
+          next: (data: any) => {
+            console.log("Alguien entro ", data);
+            this.salaId = data.idSala;
+            this.player1 = data.player1;
+            this.player2 = data.player2;
             this.jugarBoton();
-            environment.idSala=this.salaId;
+            environment.idSala = this.salaId;
             console.log("sala id = ", environment.idSala);
-            const ruta=['juego',this.player1,this.player2];
-            environment.esPlayer1=true;
+            const ruta = ['juego', this.player1, this.player2];
+            environment.esPlayer1 = true;
             this.router.navigate(ruta);
           },
-          error:(error)=>{
+          error: (error) => {
             console.error({error});
           },
-          complete:()=>{
+          complete: () => {
 
           }
         }
       );
+    if (!environment.esPlayer2) {
+      if(!environment.llegoAlguien){
+        this.dialogCargar.open(
+          ModalCargandoComponent,
+          {
+            data: this.player2
+          }
+        )
+      }
+    }
+
+
   }
   jugarBoton(){
     this.webSocketService.ejecutarEventoPresentarJugadores(this.salaId,this.nombre,"player2");
