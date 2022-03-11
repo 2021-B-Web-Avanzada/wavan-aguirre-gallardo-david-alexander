@@ -4,6 +4,10 @@ import {SupermercadosComponent} from "./rutas/supermercados/supermercados.compon
 import {RegistromercadoComponent} from "./rutas/supermercados/registromercado/registromercado.component";
 import {MercadoComponent} from "./rutas/supermercados/mercado/mercado.component";
 import {ActualizarmercadoComponent} from "./rutas/supermercados/actualizarmercado/actualizarmercado.component";
+import {ProductosComponent} from "./rutas/productos/productos.component";
+import {ProductoComponent} from "./rutas/productos/producto/producto.component";
+import {RegistroproductoComponent} from "./rutas/productos/registroproducto/registroproducto.component";
+import {ActualizarproductoComponent} from "./rutas/productos/actualizarproducto/actualizarproducto.component";
 
 const routes: Routes = [
   {
@@ -21,6 +25,24 @@ const routes: Routes = [
       {
         path:'actualizarmercado/:idMercado',
         component:ActualizarmercadoComponent
+      }
+    ]
+  },
+  {
+    path:'productos',
+    component: ProductosComponent,
+    children:[
+      {
+        path: 'producto',
+        component: ProductoComponent
+      },
+      {
+        path: 'registroproducto',
+        component: RegistroproductoComponent
+      },
+      {
+        path: 'actualizarproducto/:idProducto',
+        component: ActualizarproductoComponent
       }
     ]
   }

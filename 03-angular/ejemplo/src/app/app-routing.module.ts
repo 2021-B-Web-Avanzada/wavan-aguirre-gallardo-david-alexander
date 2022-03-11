@@ -10,6 +10,7 @@ import {RutaUsuarioComponent} from "./rutas/ruta-usuario/ruta-usuario.component"
 import {EstaLogeadoGuard} from "./services/auth/esta-logeado.guard";
 import {EsAdministradorGuard} from "./services/auth/esadministrador.guard";
 import {RutaUsuarioPerfilComponent} from "./rutas/ruta-usuario-perfil/ruta-usuario-perfil.component";
+import {RutaSalaComponent} from "./rutas/ruta-sala/ruta-sala.component";
 
 
 //Login
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: RutaLoginComponent,
+  },
+  {
+    path: ':salaId/sala/:nombre',
+    component: RutaSalaComponent,
   },
   {
     path: 'not-found',

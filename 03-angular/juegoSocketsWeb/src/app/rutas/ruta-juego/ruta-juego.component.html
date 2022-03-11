@@ -1,0 +1,69 @@
+<div class="container-fluid" style="background: #0F2D6A">
+  <div  class="container mx-auto" style="background: #0F2D6A;">
+    <form class="p-2 w-100 mx-auto" [formGroup]="formGroup" >
+      <div class="d-inline-flex w-50 pe-3">
+        <div class="row">
+          <div class="col text-center">
+            <label for="username" class="col-form-label">Jugador 1</label>
+            <input class="form-control form-control" type="text" id="username"
+                   formControlName="username" spellcheck="false">
+          </div>
+          <div class="w-100 d-none d-md-block"></div>
+          <div class="col text-center">
+            <label for="jugada" class="col-form-label">¿Piedra, papel o tijera?</label>
+            <select class="form-select" aria-label="Default select example"
+                    formControlName="jugada" id="jugada">
+              <option value="1" selected>Piedra</option>
+              <option value="2">Papel</option>
+              <option value="3">Tijera</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="d-inline-flex w-50 ps-3">
+
+        <div class="row">
+          <div class="col text-center">
+            <label for="usernameplayer2" class="col-form-label">Jugador 2</label>
+            <input class="form-control form-control" type="text" id="usernameplayer2"
+                   formControlName="usernameplayer2" spellcheck="false">
+          </div>
+          <div class="w-100 d-none d-md-block"></div>
+          <div class="col text-center">
+            <label for="jugadaplayer2" class="col-form-label">¿Piedra, papel o tijera?</label>
+            <select class="form-select" aria-label="Default select example"
+                    formControlName="jugadaplayer2" id="jugadaplayer2">
+              <option value="1" selected>Piedra</option>
+              <option value="2">Papel</option>
+              <option value="3">Tijera</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center p-4">
+          <button type="button" class="btn btn-primary btn-lg"
+                  style="height: 57px; width: 308px;background: #545A85;color: white;font-family: Mogra;
+                 font-size: 36px"
+          (click)="lanzarJugada()">
+            JUGAR
+          </button>
+        </div>
+
+      </div>
+
+      <!--      <div class="d-inline-flex align-content-center flex-wrap w-50" style="height: 100%">-->
+      <!--        <div class="d-grid gap-2 mx-auto">-->
+      <!--          <button type="button" class="btn btn-primary btn-lg"-->
+      <!--                  style="height: 107px; width: 306px;background: #060A47;color: #545A85;font-family: Mogra; font-size: 48px">-->
+      <!--            ¡A JUGAR!-->
+      <!--          </button>-->
+      <!--        </div>-->
+      <!--      </div>-->
+
+    </form>
+
+
+  </div>
+</div>
+

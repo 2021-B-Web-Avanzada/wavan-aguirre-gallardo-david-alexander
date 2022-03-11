@@ -40,5 +40,24 @@ export class AppComponent {
         }
         );
   }
-
+  marcarMercadosComoActivo(){
+    let mercadoNav = document.getElementById('mercadoNav');
+    let productoNav = document.getElementById('productoNav');
+    if(productoNav&&mercadoNav){
+      if(productoNav.classList.contains("active")){
+        productoNav.classList.remove('active');
+        mercadoNav.classList.add("active");
+      }
+    }
+  }
+  marcarProductoComoActivo(){
+    let mercadoNav = document.getElementById('mercadoNav');
+    let productoNav = document.getElementById('productoNav');
+    if(productoNav&&mercadoNav){
+      if(mercadoNav.classList.contains("active")){
+        mercadoNav.classList.remove('active');
+        productoNav.classList.add("active");
+      }
+    }
+  }
 }

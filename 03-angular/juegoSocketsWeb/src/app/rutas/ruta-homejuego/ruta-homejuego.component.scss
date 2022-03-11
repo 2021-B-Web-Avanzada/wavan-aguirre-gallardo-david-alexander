@@ -1,0 +1,26 @@
+
+@font-face {
+  font-family: 'Mogra';
+  src: url('../../../assets/fonts/Mogra-Regular.ttf') ;
+  font-style: normal;
+  font-weight: normal;
+}
+.col-form-label{
+  color: white;
+  font-family: Mogra;
+  font-size: 36px;
+}
+.form-control{
+  color: #0F2D6A;
+  font-family: Mogra;
+  font-size: 24px;
+}
+input{
+  text-align: center;
+}
+.form-select{
+  color: #0F2D6A;
+  font-family: Mogra;
+  font-size: 24px;
+  text-align: center;
+}

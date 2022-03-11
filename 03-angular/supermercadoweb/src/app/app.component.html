@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/supermercado','mercado']" >Supermercados</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/supermercado','mercado']" id="mercadoNav" (click)="marcarMercadosComoActivo()">Supermercados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Productos</a>
+          <a class="nav-link" [routerLink]="['/productos','producto']" id="productoNav" (click)="marcarProductoComoActivo()">Productos</a>
         </li>
       </ul>
 
