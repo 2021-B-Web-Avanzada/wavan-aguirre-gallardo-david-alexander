@@ -13,7 +13,7 @@ numeroDos=true;
 
 //inmutables
 constConfiguracionArchivos = "pdf";
-
+constListaDeConstantes = ""
 
 //Tipos de variables
 const numero =1;
@@ -138,7 +138,7 @@ console.log(edadAlexander);
 // delete rafael.nombre;
 // console.log(rafael);
 // console.log(lenin);
-//Manerac correcta con variables por referencia para clonar al objeto
+//Manera correcta con variables por referencia para clonar al objeto
 let rafael = {
     nombre:"rafael"
 };
